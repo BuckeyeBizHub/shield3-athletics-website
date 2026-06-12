@@ -9,38 +9,35 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
         
-        :root {
-            --primary: #111827;
-        }
-        
         body {
             font-family: 'Inter', system_ui, sans-serif;
         }
         
-        .heading-font {
+        .heading {
             font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
             font-weight: 600;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.03em;
         }
 
-        .section-header {
-            font-size: 2.25rem;
-            line-height: 2.5rem;
+        .section-title {
+            font-size: 2.5rem;
+            line-height: 2.75rem;
             font-weight: 600;
             letter-spacing: -0.025em;
         }
 
         .layer-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                       box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
         
         .layer-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
 
         .nav-link {
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
         }
         
         .nav-link:hover {
@@ -50,32 +47,31 @@
 </head>
 <body class="bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="border-b border-gray-100">
+    <nav class="border-b border-gray-100 bg-white sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <div class="flex items-center gap-x-3">
-                <div class="w-9 h-9 bg-black rounded-xl flex items-center justify-center">
+                <div class="w-9 h-9 bg-black rounded-2xl flex items-center justify-center">
                     <span class="text-white font-bold text-2xl tracking-tighter">S3</span>
                 </div>
-                <div>
+                <div class="flex items-baseline gap-x-1">
                     <span class="font-semibold text-2xl tracking-tighter">Shield3</span>
-                    <span class="text-gray-400 text-sm font-medium">Athletics</span>
                 </div>
             </div>
             
             <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="how-it-works.html" class="nav-link text-gray-600 hover:text-gray-900">How it Works</a>
-                <a href="products.html" class="nav-link text-gray-600 hover:text-gray-900">Products</a>
-                <a href="proof.html" class="nav-link text-gray-600 hover:text-gray-900">Proof</a>
-                <a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
+                <a href="how-it-works.html" class="nav-link text-gray-600">How it Works</a>
+                <a href="products.html" class="nav-link text-gray-600">Products</a>
+                <a href="proof.html" class="nav-link text-gray-600">Proof</a>
+                <a href="contact.html" class="nav-link text-gray-600">Contact</a>
             </div>
             
             <div class="flex items-center gap-x-3">
                 <a href="contact.html" 
-                   class="px-5 py-2.5 text-sm font-semibold border border-gray-300 rounded-2xl hover:bg-gray-50 transition-colors">
+                   class="hidden sm:block px-5 py-2.5 text-sm font-semibold border border-gray-300 rounded-2xl hover:bg-gray-50 transition-colors">
                     Request Quote
                 </a>
                 <a href="contact.html" 
-                   class="px-5 py-2.5 text-sm font-semibold bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors">
+                   class="px-6 py-2.5 text-sm font-semibold bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors">
                     Get Started
                 </a>
             </div>
@@ -83,115 +79,109 @@
     </nav>
 
     <!-- Hero -->
-    <div class="max-w-5xl mx-auto px-6 pt-16 pb-20 text-center">
-        <div class="inline-flex items-center gap-x-2 bg-gray-100 text-gray-600 text-sm font-medium px-4 py-1.5 rounded-3xl mb-6">
-            <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-            Now available for facility treatments
+    <div class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+        <div class="inline-flex items-center gap-x-2 bg-gray-100 px-4 py-1.5 rounded-3xl mb-8">
+            <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+            <span class="text-sm font-medium text-gray-600">Now serving high schools, clubs &amp; athletic programs</span>
         </div>
         
         <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-6">
             Three Layers.<br>
-            <span class="text-gray-900">Total Protection.</span><br>
+            Total Protection.<br>
             <span class="text-gray-500">For Every Young Athlete.</span>
         </h1>
         
-        <p class="max-w-2xl mx-auto text-xl text-gray-600 mb-10">
-            Shield3 adds a persistent protective layer to athletic environments — 
-            one that keeps working long after cleaning is finished.
+        <p class="max-w-2xl mx-auto text-2xl text-gray-600 mb-10">
+            A persistent protective layer that keeps working long after cleaning stops.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="contact.html" 
-               class="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-semibold rounded-3xl text-lg hover:bg-gray-900 transition-colors">
+               class="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-semibold rounded-3xl text-lg hover:bg-gray-900 transition-all active:scale-[0.985]">
                 Request a Facility Treatment
             </a>
             <a href="proof.html" 
-               class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 font-semibold rounded-3xl text-lg hover:bg-gray-50 transition-colors">
+               class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 font-semibold rounded-3xl text-lg hover:bg-gray-50 transition-all">
                 See the Proof
             </a>
         </div>
-        
-        <p class="mt-6 text-sm text-gray-500">
-            Built for high schools, clubs, and athletic programs
-        </p>
     </div>
 
-    <!-- The Problem -->
-    <div class="max-w-5xl mx-auto px-6 pb-16">
+    <!-- Problem -->
+    <div class="max-w-4xl mx-auto px-6 pb-16">
         <div class="max-w-3xl">
-            <div class="text-sm font-semibold tracking-widest text-gray-500 mb-3">THE PROBLEM</div>
-            <h2 class="section-header mb-6">The protection gap is real.</h2>
+            <div class="uppercase tracking-[3px] text-xs font-semibold text-gray-500 mb-3">The Problem</div>
+            <h2 class="section-title mb-6">There’s a gap between cleanings.</h2>
             <p class="text-xl text-gray-600">
-                Most athletic facilities clean thoroughly — then leave surfaces, air, and gear exposed until the next cleaning cycle. 
-                This window is where contamination spreads.
+                Even well-maintained athletic facilities have a window of vulnerability. 
+                Once surfaces dry, conventional disinfectants stop working — leaving athletes exposed until the next cleaning cycle.
             </p>
         </div>
     </div>
 
-    <!-- The Solution -->
+    <!-- Three Layers -->
     <div class="bg-gray-50 py-16">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-12">
-                <div class="text-sm font-semibold tracking-widest text-gray-500 mb-3">THE SOLUTION</div>
-                <h2 class="section-header">One system.<br>Three layers of protection.</h2>
-                <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-                    Shield3 creates a persistent barrier that works between your normal cleaning cycles.
+                <div class="uppercase tracking-[3px] text-xs font-semibold text-gray-500 mb-3">The Solution</div>
+                <h2 class="section-title mb-4">One system.<br>Three layers of protection.</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Shield3 creates a persistent barrier across the three main pathways contamination travels in athletic environments.
                 </p>
             </div>
 
-            <!-- Three Layers -->
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Layer 1 -->
+                <!-- Layer 1: Surface -->
                 <div class="layer-card bg-white border border-gray-200 rounded-3xl p-8">
-                    <div class="flex items-center gap-x-3 mb-6">
-                        <div class="w-10 h-10 bg-black text-white rounded-2xl flex items-center justify-center font-bold">01</div>
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-11 h-11 bg-black text-white rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">01</div>
                         <div>
-                            <div class="font-semibold text-xl">Surface Barrier</div>
-                            <div class="text-sm text-emerald-600 font-medium">Active Protection</div>
+                            <div class="font-semibold text-2xl">Surface Barrier</div>
+                            <div class="text-emerald-600 text-sm font-medium">Active • Persistent</div>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6">
-                        Bonds directly to high-touch surfaces like mats, lockers, benches, and equipment. 
-                        Creates a persistent layer that stays active after drying.
+                    <p class="text-gray-600 mb-8">
+                        Bonds directly to high-touch surfaces — mats, lockers, benches, and equipment. 
+                        Creates a protective layer that remains active long after application.
                     </p>
-                    <div class="text-sm text-gray-500">
-                        <i class="fa-solid fa-check mr-2 text-emerald-500"></i> 
-                        Non-leaching • Bonds at the molecular level
+                    <div class="flex items-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-check text-emerald-500"></i>
+                        <span class="text-gray-600">Non-leaching molecular bond</span>
                     </div>
                 </div>
 
-                <!-- Layer 2 -->
+                <!-- Layer 2: Air -->
                 <div class="layer-card bg-white border border-gray-200 rounded-3xl p-8">
-                    <div class="flex items-center gap-x-3 mb-6">
-                        <div class="w-10 h-10 bg-black text-white rounded-2xl flex items-center justify-center font-bold">02</div>
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-11 h-11 bg-black text-white rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">02</div>
                         <div>
-                            <div class="font-semibold text-xl">Storage Defense</div>
-                            <div class="text-sm text-emerald-600 font-medium">Continuous Protection</div>
+                            <div class="font-semibold text-2xl">Storage Defense</div>
+                            <div class="text-emerald-600 text-sm font-medium">Continuous</div>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6">
-                        Provides ongoing air treatment inside lockers, gear bags, and storage areas where moisture and bacteria can accumulate between uses.
+                    <p class="text-gray-600 mb-8">
+                        Provides ongoing treatment in lockers, gear bags, and enclosed storage areas where moisture and bacteria can build up between uses.
                     </p>
-                    <div class="text-sm text-gray-500">
-                        <i class="fa-solid fa-check mr-2 text-emerald-500"></i> 
-                        Works continuously in enclosed spaces
+                    <div class="flex items-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-check text-emerald-500"></i>
+                        <span class="text-gray-600">Works continuously in humid spaces</span>
                     </div>
                 </div>
 
-                <!-- Layer 3 -->
-                <div class="layer-card bg-white border border-gray-200 rounded-3xl p-8 relative">
-                    <div class="flex items-center gap-x-3 mb-6">
-                        <div class="w-10 h-10 bg-black text-white rounded-2xl flex items-center justify-center font-bold">03</div>
+                <!-- Layer 3: Gear -->
+                <div class="layer-card bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-11 h-11 bg-black text-white rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">03</div>
                         <div>
-                            <div class="font-semibold text-xl">Gear Defense</div>
-                            <div class="text-sm text-amber-600 font-medium">Coming Soon</div>
+                            <div class="font-semibold text-2xl">Gear Defense</div>
+                            <div class="text-amber-600 text-sm font-medium">In Development</div>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6">
-                        Extends protection into every wash cycle for uniforms, pads, and personal equipment.
+                    <p class="text-gray-600 mb-8">
+                        Extends protection into wash cycles for uniforms, pads, and personal equipment.
                     </p>
-                    <div class="inline-flex items-center px-3 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-2xl">
-                        In active development
+                    <div class="inline-block px-3 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-2xl">
+                        Coming soon
                     </div>
                 </div>
             </div>
@@ -200,34 +190,28 @@
 
     <!-- The Difference -->
     <div class="max-w-5xl mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
-            <div>
-                <div class="text-sm font-semibold tracking-widest text-gray-500 mb-3">THE DIFFERENCE</div>
-                <h2 class="section-header mb-6">It doesn’t disappear when it dries.</h2>
-                <p class="text-lg text-gray-600">
-                    Traditional disinfectants work while wet — then they’re gone. 
-                    Shield3 creates a barrier that remains active between cleanings.
-                </p>
+        <div class="grid md:grid-cols-5 gap-x-12 gap-y-10 items-center">
+            <div class="md:col-span-2">
+                <div class="uppercase tracking-[3px] text-xs font-semibold text-gray-500 mb-3">The Difference</div>
+                <h2 class="section-title mb-6">Protection that doesn’t wash away.</h2>
             </div>
             
-            <div class="space-y-6">
-                <div class="flex gap-4">
-                    <div class="w-6 h-6 mt-1 flex-shrink-0">
-                        <i class="fa-solid fa-times text-red-500 text-xl"></i>
+            <div class="md:col-span-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="border border-gray-200 rounded-3xl p-6">
+                        <div class="font-medium mb-3 flex items-center gap-x-2">
+                            <i class="fa-solid fa-times text-red-500"></i> 
+                            <span>Conventional Disinfectants</span>
+                        </div>
+                        <p class="text-gray-600">Work only while wet. Protection disappears as soon as the surface dries.</p>
                     </div>
-                    <div>
-                        <div class="font-medium">Conventional disinfectants</div>
-                        <div class="text-gray-600">Work only while wet. Protection disappears as soon as the surface dries.</div>
-                    </div>
-                </div>
-                
-                <div class="flex gap-4">
-                    <div class="w-6 h-6 mt-1 flex-shrink-0">
-                        <i class="fa-solid fa-check text-emerald-500 text-xl"></i>
-                    </div>
-                    <div>
-                        <div class="font-medium">Shield3 Barrier Technology</div>
-                        <div class="text-gray-600">Bonds to surfaces and stays active. Protection continues working long after application.</div>
+                    
+                    <div class="border border-emerald-200 bg-emerald-50 rounded-3xl p-6">
+                        <div class="font-medium mb-3 flex items-center gap-x-2 text-emerald-700">
+                            <i class="fa-solid fa-check"></i> 
+                            <span>Shield3 Barrier</span>
+                        </div>
+                        <p class="text-gray-700">Bonds to surfaces at the molecular level and stays active between cleanings.</p>
                     </div>
                 </div>
             </div>
@@ -239,46 +223,44 @@
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-12">
                 <div class="text-emerald-400 text-sm font-semibold tracking-widest mb-3">WHY IT MATTERS</div>
-                <h2 class="section-header">Protection that protects the people who matter most.</h2>
+                <h2 class="section-title">Protection that protects what matters most.</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <div class="font-semibold text-xl mb-3">For Athletic Directors</div>
-                    <p class="text-gray-300">Add a proactive layer to your existing cleaning program with measurable results.</p>
+                    <div class="font-semibold text-xl mb-3">Athletic Directors</div>
+                    <p class="text-gray-300">Add a measurable, proactive layer to your existing cleaning program.</p>
                 </div>
                 <div>
-                    <div class="font-semibold text-xl mb-3">For Coaches</div>
-                    <p class="text-gray-300">Reduce time worrying about facility cleanliness so you can focus on your athletes.</p>
+                    <div class="font-semibold text-xl mb-3">Coaches</div>
+                    <p class="text-gray-300">Reduce variables so you can focus on developing your athletes.</p>
                 </div>
                 <div>
-                    <div class="font-semibold text-xl mb-3">For Parents</div>
-                    <p class="text-gray-300">Give your child one less thing to worry about when they step into the locker room or onto the mat.</p>
+                    <div class="font-semibold text-xl mb-3">Parents</div>
+                    <p class="text-gray-300">One less concern when your child steps into the locker room or onto the field.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- CTA -->
+    <!-- Final CTA -->
     <div class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h2 class="text-4xl font-semibold tracking-tight mb-6">Ready to close the protection gap?</h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-md mx-auto">
-            Let’s discuss how Shield3 can fit into your facility’s current routine.
-        </p>
+        <h2 class="text-4xl font-semibold tracking-tight mb-6">Ready to strengthen your facility?</h2>
+        <p class="text-xl text-gray-600 mb-8">Let’s talk about how Shield3 can fit into your current routine.</p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="contact.html" 
-               class="px-8 py-4 bg-black text-white font-semibold rounded-3xl text-lg hover:bg-gray-900 transition-colors">
+               class="px-8 py-4 bg-black text-white font-semibold rounded-3xl text-lg hover:bg-gray-900 transition-all">
                 Request a Facility Assessment
             </a>
             <a href="proof.html" 
-               class="px-8 py-4 border border-gray-300 font-semibold rounded-3xl text-lg hover:bg-gray-50 transition-colors">
+               class="px-8 py-4 border border-gray-300 font-semibold rounded-3xl text-lg hover:bg-gray-50 transition-all">
                 View the Proof
             </a>
         </div>
     </div>
 
-    <footer class="border-t border-gray-100 py-8">
+    <footer class="border-t py-8">
         <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500">
             © Shield3 Athletics. Protection that stays between cleanings.
         </div>
