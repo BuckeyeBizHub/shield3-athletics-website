@@ -1,270 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shield3 Athletics — Protection That Stays Between Cleanings</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .heading {
-            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shield3 Athletics — Three Layers of Protection for Athletic Environments</title>
+<meta name="description" content="Shield3 adds a persistent protective layer to the surfaces and air young athletes share — protection that keeps working after the disinfectant dries. For Every Young Athlete.">
 
-        .section-title {
-            font-size: 2.5rem;
-            line-height: 2.75rem;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        .layer-card {
-            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), 
-                       box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        
-        .layer-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: { ink:'#0e0e0e', coal:'#161616', slate:'#202020', gold:'#c9a227', goldlt:'#e3c25a', paper:'#f5f3ec', ash:'#9c968b' },
+    fontFamily: { display:['Oswald','sans-serif'], body:['"IBM Plex Sans"','sans-serif'] },
+    letterSpacing: { ultra:'0.28em' }
+  }}
+}
+</script>
+<style>
+  html{scroll-behavior:smooth} body{font-family:'IBM Plex Sans',sans-serif}
+  .font-display{font-family:'Oswald',sans-serif} .kicker{letter-spacing:.28em}
+  .vector{font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.04em;line-height:.9}
+  .watermark{font-family:'Oswald',sans-serif;font-weight:700;line-height:1}
+  .src{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:10px}
+  .chip{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+  .gold-rule{height:3px;width:64px;background:linear-gradient(90deg,#c9a227,#e3c25a)}
 
-        .nav-link {
-            transition: all 0.2s ease;
-        }
-        
-        .nav-link:hover {
-            color: #111827;
-        }
-    </style>
+  /* ---- depth backgrounds ---- */
+  .deep{background:
+      radial-gradient(900px 500px at 85% -10%, rgba(201,162,39,.14), transparent 60%),
+      radial-gradient(700px 600px at 0% 110%, rgba(201,162,39,.06), transparent 55%),
+      linear-gradient(180deg,#121212,#0c0c0c);}
+  .deep-soft{background:
+      radial-gradient(700px 400px at 15% 0%, rgba(201,162,39,.08), transparent 60%),
+      linear-gradient(180deg,#161616,#101010);}
+  .tex{position:absolute;inset:0;pointer-events:none}
+  .grain{opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  .grid-lines{opacity:.5;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent);mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent)}
+
+  /* ---- glass + gradient-edge cards ---- */
+  .glass{position:relative;background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.015));backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 60px -30px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.05)}
+  .gedge{position:relative;background:#15151a;border-radius:2px;box-shadow:0 24px 50px -28px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.04)}
+  .gedge::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+    background:linear-gradient(155deg,rgba(201,162,39,.55),rgba(255,255,255,.06) 38%,transparent 70%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .gedge-dim::before{background:linear-gradient(155deg,rgba(255,255,255,.16),transparent 60%)}
+  .lift{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
+  .lift:hover{transform:translateY(-8px);box-shadow:0 40px 70px -30px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,39,.25)}
+  .paper-card{background:#fff;box-shadow:0 24px 50px -34px rgba(14,14,14,.45);border:1px solid rgba(14,14,14,.06)}
+
+  /* ---- hero motion ---- */
+  .scanwrap{position:relative;overflow:hidden}
+  .scanbeam{position:absolute;left:0;right:0;height:120px;top:-120px;
+    background:linear-gradient(180deg,transparent,rgba(201,162,39,.28),transparent);
+    animation:scan 4.2s ease-in-out infinite;pointer-events:none}
+  @keyframes scan{0%{top:-120px}55%{top:100%}100%{top:100%}}
+  .orb{animation:pulse 6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+  .float{animation:floaty 5s ease-in-out infinite}
+  .float.d1{animation-delay:.6s}.float.d2{animation-delay:1.4s}.float.d3{animation-delay:2.1s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  .shimmer{animation:sh 3.5s linear infinite}
+  @keyframes sh{0%{opacity:.35}50%{opacity:1}100%{opacity:.35}}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---- angled dividers ---- */
+  .slant-t{clip-path:polygon(0 3.5vw,100% 0,100% 100%,0 100%)}
+  .slant-b{clip-path:polygon(0 0,100% 0,100% calc(100% - 3.5vw),0 100%)}
+
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
-<body class="bg-white text-gray-900">
-    <!-- Navigation -->
-    <nav class="border-b border-gray-100 bg-white sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-                <div class="w-9 h-9 bg-black rounded-2xl flex items-center justify-center">
-                    <span class="text-white font-bold text-2xl tracking-tighter">S3</span>
-                </div>
-                <div class="flex items-baseline gap-x-1">
-                    <span class="font-semibold text-2xl tracking-tighter">Shield3</span>
-                </div>
-            </div>
-            
-            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="how-it-works.html" class="nav-link text-gray-600">How it Works</a>
-                <a href="products.html" class="nav-link text-gray-600">Products</a>
-                <a href="proof.html" class="nav-link text-gray-600">Proof</a>
-                <a href="contact.html" class="nav-link text-gray-600">Contact</a>
-            </div>
-            
-            <div class="flex items-center gap-x-3">
-                <a href="contact.html" 
-                   class="hidden sm:block px-5 py-2.5 text-sm font-semibold border border-gray-300 rounded-2xl hover:bg-gray-50 transition-colors">
-                    Request Quote
-                </a>
-                <a href="contact.html" 
-                   class="px-6 py-2.5 text-sm font-semibold bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors">
-                    Get Started
-                </a>
-            </div>
-        </div>
+
+<body class="bg-paper text-ink antialiased">
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="bg-ink text-paper text-[11px] tracking-wide border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-5 py-2 flex items-center justify-between">
+    <span class="font-display kicker text-gold uppercase">Proactive protection for athletic environments</span>
+    <nav class="hidden sm:flex items-center gap-5 text-ash uppercase font-display tracking-widest">
+      <a href="#" class="hover:text-paper transition">Search</a>
+      <a href="#" class="hover:text-paper transition">Account</a>
+      <a href="#" class="hover:text-paper transition">Cart (0)</a>
     </nav>
+  </div>
+</div>
 
-    <!-- Hero -->
-    <div class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
-        <div class="inline-flex items-center gap-x-2 bg-gray-100 px-4 py-1.5 rounded-3xl mb-8">
-            <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-            <span class="text-sm font-medium text-gray-600">Now serving high schools, clubs &amp; athletic programs</span>
-        </div>
-        
-        <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-6">
-            Three Layers.<br>
-            Total Protection.<br>
-            <span class="text-gray-500">For Every Young Athlete.</span>
-        </h1>
-        
-        <p class="max-w-2xl mx-auto text-2xl text-gray-600 mb-10">
-            A persistent protective layer that keeps working long after cleaning stops.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="contact.html" 
-               class="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-semibold rounded-3xl text-lg hover:bg-gray-900 transition-all active:scale-[0.985]">
-                Request a Facility Treatment
-            </a>
-            <a href="proof.html" 
-               class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 font-semibold rounded-3xl text-lg hover:bg-gray-50 transition-all">
-                See the Proof
-            </a>
-        </div>
+<!-- ============ HEADER / NAV ============ -->
+<header class="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b border-white/10 text-paper">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex items-center justify-between h-[68px]">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <span class="inline-block h-8 w-8 border-2 border-gold relative">
+          <span class="absolute inset-1 border border-gold/60"></span>
+          <span class="absolute inset-[6px] bg-gold"></span>
+        </span>
+        <span class="font-display font-700 text-xl tracking-wide leading-none">
+          SHIELD<span class="text-gold">3</span><span class="block text-[10px] tracking-ultra text-ash font-400 mt-0.5">ATHLETICS</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 font-display uppercase text-sm tracking-widest">
+        <a href="how-it-works.html" class="hover:text-gold transition">How It Works</a>
+        <a href="products.html" class="hover:text-gold transition">Products</a>
+        <a href="#solutions" class="hover:text-gold transition">Solutions</a>
+        <a href="proof.html" class="hover:text-gold transition">Proof</a>
+        <a href="#pricing" class="hover:text-gold transition">Pricing</a>
+        <a href="#pilots" class="hover:text-gold transition">Pilots</a>
+        <a href="#about" class="hover:text-gold transition">About</a>
+        <a href="contact.html" class="hover:text-gold transition">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="contact.html" class="font-display uppercase text-xs tracking-widest border border-gold text-gold px-4 py-2.5 hover:bg-gold hover:text-ink transition">Request a Quote</a>
+        <a href="products.html" class="font-display uppercase text-xs tracking-widest bg-gold text-ink px-4 py-2.5 hover:bg-goldlt transition">Shop Products</a>
+      </div>
+
+      <button id="menuBtn" class="lg:hidden text-paper p-2" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-ink">
+    <nav class="max-w-7xl mx-auto px-5 py-4 flex flex-col font-display uppercase tracking-widest text-sm">
+      <a href="how-it-works.html" class="py-3 border-b border-white/5 hover:text-gold">How It Works</a>
+      <a href="products.html" class="py-3 border-b border-white/5 hover:text-gold">Products</a>
+      <a href="#solutions" class="py-3 border-b border-white/5 hover:text-gold">Solutions</a>
+      <a href="proof.html" class="py-3 border-b border-white/5 hover:text-gold">Proof</a>
+      <a href="#pricing" class="py-3 border-b border-white/5 hover:text-gold">Pricing</a>
+      <a href="#pilots" class="py-3 border-b border-white/5 hover:text-gold">Pilots</a>
+      <a href="#about" class="py-3 border-b border-white/5 hover:text-gold">About</a>
+      <a href="contact.html" class="py-3 border-b border-white/5 hover:text-gold">Contact</a>
+      <div class="flex gap-3 pt-4">
+        <a href="contact.html" class="flex-1 text-center border border-gold text-gold px-4 py-3 text-xs">Request a Quote</a>
+        <a href="products.html" class="flex-1 text-center bg-gold text-ink px-4 py-3 text-xs">Shop Products</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="deep text-paper relative overflow-hidden">
+  <div class="tex grain"></div>
+  <div class="tex grid-lines"></div>
+  <div class="absolute -right-32 -top-24 h-[460px] w-[460px] rounded-full orb" style="background:radial-gradient(circle, rgba(201,162,39,.22), transparent 65%)"></div>
+  <div class="absolute -left-24 bottom-0 h-[360px] w-[360px] rounded-full orb" style="background:radial-gradient(circle, rgba(201,162,39,.10), transparent 65%);animation-delay:1.5s"></div>
+
+  <div class="max-w-7xl mx-auto px-5 py-24 md:py-32 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <span class="inline-flex items-center gap-2 chip text-gold border border-gold/40 rounded-full px-4 py-1.5 mb-8 bg-white/5 backdrop-blur">
+        <span class="h-1.5 w-1.5 rounded-full bg-gold shimmer"></span> Proactive protection for athletic environments
+      </span>
+      <h1 class="font-display font-700 uppercase leading-[0.9] text-6xl md:text-8xl">
+        Clean wears off.<br>
+        <span class="text-transparent bg-clip-text" style="background-image:linear-gradient(92deg,#e3c25a,#c9a227 55%,#9c7d18)">Shield3 doesn't.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-paper/80 max-w-xl font-300 leading-relaxed mt-8">
+        Conventional disinfectants quit the moment they dry. Shield3 adds a persistent protective layer to the surfaces and air young athletes share — one that <span class="text-paper font-500">keeps working long after the cleaning is done.</span>
+      </p>
+      <p class="font-display uppercase tracking-widest text-sm text-paper/70 mt-7 border-l-2 border-gold pl-4">
+        Three Layers. Total Protection. <span class="text-gold">For Every Young Athlete.</span>
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <a href="contact.html" class="group font-display uppercase tracking-widest text-sm bg-gold text-ink px-7 py-4 hover:bg-goldlt transition flex items-center justify-center gap-2 shadow-[0_18px_40px_-15px_rgba(201,162,39,.6)]">
+          Request a Treatment / Quote <span class="group-hover:translate-x-1 transition">→</span>
+        </a>
+        <a href="#pilots" class="font-display uppercase tracking-widest text-sm border border-paper/40 text-paper px-7 py-4 hover:border-gold hover:text-gold transition text-center">
+          Explore Pilot Programs
+        </a>
+      </div>
+      <p class="text-ash text-xs mt-6 max-w-xl">Built for schools, high school programs, clubs, and the families who trust them.</p>
     </div>
 
-    <!-- Problem -->
-    <div class="max-w-4xl mx-auto px-6 pb-16">
-        <div class="max-w-3xl">
-            <div class="uppercase tracking-[3px] text-xs font-semibold text-gray-500 mb-3">The Problem</div>
-            <h2 class="section-title mb-6">There’s a gap between cleanings.</h2>
-            <p class="text-xl text-gray-600">
-                Even well-maintained athletic facilities have a window of vulnerability. 
-                Once surfaces dry, conventional disinfectants stop working — leaving athletes exposed until the next cleaning cycle.
-            </p>
+    <!-- animated layered-shield visual -->
+    <div class="lg:col-span-5 reveal">
+      <div class="relative mx-auto max-w-sm">
+        <div class="scanwrap glass p-8 rounded-sm">
+          <div class="scanbeam"></div>
+          <svg viewBox="0 0 240 270" class="w-full relative z-10" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Shield with three protective layers: surface, air, and gear, deflecting particles.">
+            <defs>
+              <linearGradient id="shieldFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#c9a227" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#c9a227" stop-opacity=".02"/>
+              </linearGradient>
+              <linearGradient id="bandG" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#c9a227" stop-opacity="0"/>
+                <stop offset="0.5" stop-color="#e3c25a"/>
+                <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+              </linearGradient>
+              <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+            </defs>
+
+            <!-- deflected particles -->
+            <g fill="#9c968b">
+              <circle class="float" cx="55" cy="40" r="3"/>
+              <circle class="float d1" cx="120" cy="26" r="3.5"/>
+              <circle class="float d2" cx="185" cy="44" r="3"/>
+              <circle class="float d3" cx="92" cy="52" r="2.5"/>
+              <circle class="float d2" cx="158" cy="56" r="2.5"/>
+            </g>
+
+            <!-- shield glow -->
+            <path d="M120 16 L208 46 V122 C208 186 168 226 120 248 C72 226 32 186 32 122 V46 Z" fill="#c9a227" opacity=".18" filter="url(#soft)"/>
+            <!-- shield -->
+            <path d="M120 16 L208 46 V122 C208 186 168 226 120 248 C72 226 32 186 32 122 V46 Z" fill="url(#shieldFill)" stroke="#c9a227" stroke-width="2.5"/>
+            <path d="M120 30 L196 56 V120 C196 176 162 212 120 232 C78 212 44 176 44 120 V56 Z" fill="none" stroke="#c9a227" stroke-opacity=".25" stroke-width="1"/>
+
+            <!-- three layer bands -->
+            <g>
+              <line x1="46" y1="100" x2="194" y2="100" stroke="url(#bandG)" stroke-width="2" class="shimmer"/>
+              <line x1="40" y1="148" x2="200" y2="148" stroke="url(#bandG)" stroke-width="2" class="shimmer" style="animation-delay:1s"/>
+              <line x1="52" y1="196" x2="188" y2="196" stroke="url(#bandG)" stroke-width="2" stroke-opacity=".5"/>
+            </g>
+            <text x="120" y="86" text-anchor="middle" font-family="Oswald" font-size="12" letter-spacing="4" fill="#e3c25a">SURFACE</text>
+            <text x="120" y="134" text-anchor="middle" font-family="Oswald" font-size="12" letter-spacing="4" fill="#e3c25a">AIR</text>
+            <text x="120" y="182" text-anchor="middle" font-family="Oswald" font-size="12" letter-spacing="4" fill="#e3c25a" opacity=".55">GEAR</text>
+            <text x="120" y="224" text-anchor="middle" font-family="Oswald" font-size="22" font-weight="700" fill="#f5f3ec">SHIELD<tspan fill="#c9a227">3</tspan></text>
+          </svg>
         </div>
+        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-gold text-ink chip px-4 py-1.5 whitespace-nowrap shadow-[0_12px_30px_-10px_rgba(201,162,39,.7)]">One system · three layers</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- credibility strip -->
+  <div class="border-t border-white/10 bg-black/50 relative z-10">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-[11px] md:text-xs text-ash font-display uppercase tracking-widest text-center">
+      <span>Independent lab–confirmed efficacy</span><span class="text-gold/50">•</span>
+      <span>Verified in the field with ATP measurement</span><span class="text-gold/50">•</span>
+      <span>Complements — doesn't replace — routine cleaning</span><span class="text-gold/50">•</span>
+      <span>Pursuing <span class="text-paper">EPA N-List</span> registration</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE PROTECTION GAP ============ -->
+<section id="problem" class="bg-paper py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+      <div class="lg:col-span-5">
+        <p class="font-display kicker uppercase text-gold text-xs mb-4">The problem</p>
+        <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">The protection gap</h2>
+        <div class="gold-rule mt-6"></div>
+        <div class="text-lg leading-relaxed text-ink/80 font-300 space-y-5 mt-6">
+          <p>Locker rooms, mats, and shared gear are high-contact, high-moisture spaces — used by one young athlete after another, all day long.</p>
+          <p class="text-ink font-500">Programs clean diligently. But the moment a cleaning is done, those surfaces are exposed again — with nothing guarding them until the next pass.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal">
+        <div class="deep-soft relative overflow-hidden p-6 md:p-8 rounded-sm gedge">
+          <div class="tex grain"></div>
+          <p class="src text-gold mb-4 relative z-10">Protection across one cleaning cycle — illustrative</p>
+          <svg viewBox="0 0 800 320" class="w-full relative z-10" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Conventional protection drops after drying, leaving a gap; Shield3 protection holds across the cycle.">
+            <defs>
+              <linearGradient id="gapFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a227" stop-opacity=".22"/><stop offset="1" stop-color="#c9a227" stop-opacity="0"/></linearGradient>
+            </defs>
+            <line x1="70" y1="40" x2="70" y2="250" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+            <line x1="70" y1="250" x2="760" y2="250" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+            <text x="120" y="285" fill="#9c968b" font-family="Oswald" font-size="13" letter-spacing="2" text-anchor="middle">CLEANING</text>
+            <text x="700" y="285" fill="#9c968b" font-family="Oswald" font-size="13" letter-spacing="2" text-anchor="middle">NEXT CLEANING</text>
+            <text x="38" y="145" fill="#9c968b" font-family="Oswald" font-size="12" letter-spacing="1" text-anchor="middle" transform="rotate(-90 38 145)">PROTECTION</text>
+            <line x1="120" y1="40" x2="120" y2="250" stroke="rgba(201,162,39,.25)" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="700" y1="40" x2="700" y2="250" stroke="rgba(201,162,39,.25)" stroke-width="1" stroke-dasharray="4 4"/>
+            <rect x="210" y="60" width="400" height="190" fill="rgba(255,255,255,.045)"/>
+            <text x="410" y="160" fill="#9c968b" font-family="Oswald" font-size="15" letter-spacing="4" text-anchor="middle">THE GAP</text>
+            <path d="M120,70 C160,70 200,82 260,84 C400,88 520,86 640,84 C680,83 690,72 700,70 L700,250 L120,250 Z" fill="url(#gapFill)"/>
+            <path d="M120,70 C160,70 175,235 215,240 C320,248 500,248 605,240 C645,237 660,70 700,70" fill="none" stroke="#9c968b" stroke-width="3"/>
+            <path d="M120,70 C160,70 200,82 260,84 C400,88 520,86 640,84 C680,83 690,72 700,70" fill="none" stroke="#c9a227" stroke-width="3.5"/>
+            <circle cx="120" cy="305" r="5" fill="#9c968b"/><text x="134" y="310" fill="#9c968b" font-family="IBM Plex Sans" font-size="13">Conventional — stops once dry</text>
+            <circle cx="430" cy="305" r="5" fill="#c9a227"/><text x="444" y="310" fill="#e3c25a" font-family="IBM Plex Sans" font-size="13">Shield3 — protection holds across the cycle</text>
+          </svg>
+        </div>
+        <p class="text-xs text-ash mt-3 font-300">Conceptual illustration, not measured data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE SOLUTION — THREE LAYERS ============ -->
+<section id="solutions" class="deep text-paper py-24 md:py-32 relative overflow-hidden slant-t slant-b -mt-8">
+  <div class="tex grain"></div>
+  <div class="tex grid-lines"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="font-display kicker uppercase text-gold text-xs mb-4">The system</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-5xl leading-tight">One system. <span class="text-gold">Three layers of defense.</span></h2>
+      <p class="text-ash mt-5 font-300">Contamination travels three ways in athletic spaces — across surfaces, through stored air, and on gear. Shield3 answers all three.</p>
     </div>
 
-    <!-- Three Layers -->
-    <div class="bg-gray-50 py-16">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <div class="uppercase tracking-[3px] text-xs font-semibold text-gray-500 mb-3">The Solution</div>
-                <h2 class="section-title mb-4">One system.<br>Three layers of protection.</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Shield3 creates a persistent barrier across the three main pathways contamination travels in athletic environments.
-                </p>
-            </div>
+    <div class="grid md:grid-cols-3 gap-7 mt-16">
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Layer 1: Surface -->
-                <div class="layer-card bg-white border border-gray-200 rounded-3xl p-8">
-                    <div class="flex items-center gap-x-4 mb-6">
-                        <div class="w-11 h-11 bg-black text-white rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">01</div>
-                        <div>
-                            <div class="font-semibold text-2xl">Surface Barrier</div>
-                            <div class="text-emerald-600 text-sm font-medium">Active • Persistent</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-8">
-                        Bonds directly to high-touch surfaces — mats, lockers, benches, and equipment. 
-                        Creates a protective layer that remains active long after application.
-                    </p>
-                    <div class="flex items-center gap-x-2 text-sm">
-                        <i class="fa-solid fa-check text-emerald-500"></i>
-                        <span class="text-gray-600">Non-leaching molecular bond</span>
-                    </div>
-                </div>
-
-                <!-- Layer 2: Air -->
-                <div class="layer-card bg-white border border-gray-200 rounded-3xl p-8">
-                    <div class="flex items-center gap-x-4 mb-6">
-                        <div class="w-11 h-11 bg-black text-white rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">02</div>
-                        <div>
-                            <div class="font-semibold text-2xl">Storage Defense</div>
-                            <div class="text-emerald-600 text-sm font-medium">Continuous</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-8">
-                        Provides ongoing treatment in lockers, gear bags, and enclosed storage areas where moisture and bacteria can build up between uses.
-                    </p>
-                    <div class="flex items-center gap-x-2 text-sm">
-                        <i class="fa-solid fa-check text-emerald-500"></i>
-                        <span class="text-gray-600">Works continuously in humid spaces</span>
-                    </div>
-                </div>
-
-                <!-- Layer 3: Gear -->
-                <div class="layer-card bg-white border border-gray-200 rounded-3xl p-8">
-                    <div class="flex items-center gap-x-4 mb-6">
-                        <div class="w-11 h-11 bg-black text-white rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0">03</div>
-                        <div>
-                            <div class="font-semibold text-2xl">Gear Defense</div>
-                            <div class="text-amber-600 text-sm font-medium">In Development</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-8">
-                        Extends protection into wash cycles for uniforms, pads, and personal equipment.
-                    </p>
-                    <div class="inline-block px-3 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-2xl">
-                        Coming soon
-                    </div>
-                </div>
-            </div>
+      <!-- SURFACE -->
+      <div class="gedge lift p-7 relative overflow-hidden reveal">
+        <span class="watermark absolute -top-5 right-3 text-[120px] text-white/[0.035] select-none">01</span>
+        <div class="rounded-sm overflow-hidden border border-white/5 bg-black/30 relative">
+          <svg viewBox="0 0 320 160" class="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="sSurf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2a2a"/><stop offset="1" stop-color="#141414"/></linearGradient>
+              <linearGradient id="sSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c9a227" stop-opacity="0"/><stop offset=".5" stop-color="#c9a227" stop-opacity=".45"/><stop offset="1" stop-color="#c9a227" stop-opacity="0"/></linearGradient>
+            </defs>
+            <polygon points="40,120 230,120 290,150 100,150" fill="url(#sSurf)"/>
+            <polygon points="40,100 230,100 290,130 100,130" fill="url(#sSheen)" opacity=".55" class="shimmer"/>
+            <g stroke="#c9a227" stroke-width="1.4"><line x1="80" y1="118" x2="80" y2="108"/><line x1="120" y1="118" x2="120" y2="108"/><line x1="160" y1="118" x2="160" y2="108"/><line x1="200" y1="118" x2="200" y2="108"/><line x1="240" y1="124" x2="240" y2="114"/></g>
+            <g fill="#e3c25a"><circle cx="80" cy="106" r="2.5"/><circle cx="120" cy="106" r="2.5"/><circle cx="160" cy="106" r="2.5"/><circle cx="200" cy="106" r="2.5"/><circle cx="240" cy="112" r="2.5"/></g>
+            <circle class="float" cx="150" cy="50" r="4" fill="#9c968b"/><circle class="float d2" cx="205" cy="44" r="3" fill="#9c968b"/>
+          </svg>
         </div>
+        <h3 class="vector text-4xl md:text-5xl text-gold mt-6 relative">SURFACE</h3>
+        <p class="font-display uppercase tracking-widest text-sm text-paper mt-2 relative">Surface Barrier</p>
+        <p class="text-paper/70 font-300 leading-relaxed text-[15px] mt-3 relative">Bonds to high-touch surfaces and keeps protecting after it dries — the barrier stays put instead of wiping away with the next clean.</p>
+        <p class="src text-ash mt-5 relative">Covers · benches · mats · handles · lockers</p>
+      </div>
+
+      <!-- AIR -->
+      <div class="gedge lift p-7 relative overflow-hidden reveal">
+        <span class="watermark absolute -top-5 right-3 text-[120px] text-white/[0.035] select-none">02</span>
+        <div class="rounded-sm overflow-hidden border border-white/5 bg-black/30 relative">
+          <svg viewBox="0 0 320 160" class="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="aBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#242424"/><stop offset="1" stop-color="#131313"/></linearGradient></defs>
+            <rect x="110" y="30" width="100" height="110" rx="3" fill="url(#aBox)" stroke="#c9a227" stroke-opacity=".4"/>
+            <line x1="160" y1="30" x2="160" y2="140" stroke="#c9a227" stroke-opacity=".18"/>
+            <g fill="#e3c25a"><circle class="float" cx="135" cy="60" r="3"/><circle class="float d1" cx="185" cy="72" r="3"/><circle class="float d2" cx="140" cy="100" r="3"/><circle class="float d3" cx="182" cy="108" r="3"/><circle class="float d1" cx="160" cy="85" r="2.5"/></g>
+            <g stroke="#c9a227" stroke-opacity=".5" fill="none" class="shimmer"><path d="M126 50 q8 6 0 12"/><path d="M194 92 q-8 6 0 12"/></g>
+          </svg>
+        </div>
+        <h3 class="vector text-4xl md:text-5xl text-gold mt-6 relative">AIR</h3>
+        <p class="font-display uppercase tracking-widest text-sm text-paper mt-2 relative">Storage Defense</p>
+        <p class="text-paper/70 font-300 leading-relaxed text-[15px] mt-3 relative">Continuous treatment for the air inside enclosed storage — where humidity and shared gear concentrate the problem most.</p>
+        <p class="src text-ash mt-5 relative">Covers · lockers · gear bags · equipment rooms</p>
+      </div>
+
+      <!-- GEAR -->
+      <div class="gedge gedge-dim p-7 relative overflow-hidden reveal" style="background:#121212">
+        <span class="watermark absolute -top-5 right-3 text-[120px] text-white/[0.03] select-none">03</span>
+        <span class="absolute top-4 left-7 chip bg-gold/15 text-gold border border-gold/40 px-2 py-1 z-10">In active development</span>
+        <div class="rounded-sm overflow-hidden border border-dashed border-white/15 bg-black/20 relative mt-8">
+          <svg viewBox="0 0 320 160" class="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M130 40 l-25 12 l8 22 l12 -5 v50 h70 v-50 l12 5 l8 -22 l-25 -12 a15 15 0 01-30 0 z" fill="#1c1c1c" stroke="#9c968b" stroke-opacity=".5"/>
+            <path d="M160 78 l9 5 v11 l-9 5 l-9 -5 v-11 z" fill="none" stroke="#c9a227" stroke-opacity=".55"/>
+          </svg>
+        </div>
+        <h3 class="vector text-4xl md:text-5xl text-paper/40 mt-6 relative">GEAR</h3>
+        <p class="font-display uppercase tracking-widest text-sm text-paper/70 mt-2 relative">Gear Defense</p>
+        <p class="text-paper/60 font-300 leading-relaxed text-[15px] mt-3 relative">Protection carried into the wash, reaching the gear athletes use daily. In active development — not yet a shipping product.</p>
+        <p class="src text-ash mt-5 relative">Covers · gear · uniforms</p>
+      </div>
     </div>
 
-    <!-- The Difference -->
-    <div class="max-w-5xl mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-5 gap-x-12 gap-y-10 items-center">
-            <div class="md:col-span-2">
-                <div class="uppercase tracking-[3px] text-xs font-semibold text-gray-500 mb-3">The Difference</div>
-                <h2 class="section-title mb-6">Protection that doesn’t wash away.</h2>
-            </div>
-            
-            <div class="md:col-span-3">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="border border-gray-200 rounded-3xl p-6">
-                        <div class="font-medium mb-3 flex items-center gap-x-2">
-                            <i class="fa-solid fa-times text-red-500"></i> 
-                            <span>Conventional Disinfectants</span>
-                        </div>
-                        <p class="text-gray-600">Work only while wet. Protection disappears as soon as the surface dries.</p>
-                    </div>
-                    
-                    <div class="border border-emerald-200 bg-emerald-50 rounded-3xl p-6">
-                        <div class="font-medium mb-3 flex items-center gap-x-2 text-emerald-700">
-                            <i class="fa-solid fa-check"></i> 
-                            <span>Shield3 Barrier</span>
-                        </div>
-                        <p class="text-gray-700">Bonds to surfaces at the molecular level and stays active between cleanings.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <p class="text-center font-display uppercase tracking-widest text-sm text-ash mt-14">
+      Protect the Surface <span class="text-gold">·</span> Purify the Air <span class="text-gold">·</span> Defend the Gear
+    </p>
+  </div>
+</section>
+
+<!-- ============ THE DIFFERENCE ============ -->
+<section id="how" class="bg-paper py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="font-display kicker uppercase text-gold text-xs mb-4">The difference</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">Most products clean and leave. <span class="text-gold">Shield3 stays.</span></h2>
     </div>
 
-    <!-- Why It Matters -->
-    <div class="bg-gray-900 text-white py-16">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <div class="text-emerald-400 text-sm font-semibold tracking-widest mb-3">WHY IT MATTERS</div>
-                <h2 class="section-title">Protection that protects what matters most.</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="font-semibold text-xl mb-3">Athletic Directors</div>
-                    <p class="text-gray-300">Add a measurable, proactive layer to your existing cleaning program.</p>
-                </div>
-                <div>
-                    <div class="font-semibold text-xl mb-3">Coaches</div>
-                    <p class="text-gray-300">Reduce variables so you can focus on developing your athletes.</p>
-                </div>
-                <div>
-                    <div class="font-semibold text-xl mb-3">Parents</div>
-                    <p class="text-gray-300">One less concern when your child steps into the locker room or onto the field.</p>
-                </div>
-            </div>
+    <div class="grid md:grid-cols-2 gap-6 mt-14 items-stretch">
+      <div class="paper-card p-9 reveal flex flex-col rounded-sm">
+        <p class="font-display uppercase tracking-widest text-xs text-ash">Conventional disinfectant</p>
+        <h3 class="font-display font-600 uppercase text-2xl mt-2 text-ink/80">Works while wet. Then it's gone.</h3>
+        <div class="mt-5 mb-6 h-px bg-ink/10"></div>
+        <ul class="space-y-4 text-ink/70 font-300 flex-grow">
+          <li class="flex gap-3 items-start"><span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink/5 text-ink/40 text-xs">✕</span> Protects only while the surface is still wet</li>
+          <li class="flex gap-3 items-start"><span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink/5 text-ink/40 text-xs">✕</span> Stops working the moment it dries</li>
+          <li class="flex gap-3 items-start"><span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink/5 text-ink/40 text-xs">✕</span> Wiped away by the very next cleaning</li>
+        </ul>
+        <svg viewBox="0 0 320 64" class="w-full mt-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="10" y1="50" x2="310" y2="50" stroke="#0e0e0e" stroke-opacity=".22" stroke-width="2"/>
+          <g fill="#9c968b"><circle class="float" cx="60" cy="22" r="4"/><circle class="float d1" cx="120" cy="16" r="4"/><circle class="float d2" cx="190" cy="26" r="4"/><circle class="float d3" cx="250" cy="18" r="4"/></g>
+          <text x="160" y="42" text-anchor="middle" font-family="Oswald" font-size="10" letter-spacing="2" fill="#9c968b">RINSES AWAY</text>
+        </svg>
+      </div>
+
+      <div class="deep-soft text-paper p-9 reveal flex flex-col rounded-sm gedge relative overflow-hidden">
+        <div class="tex grain"></div>
+        <div class="relative z-10 flex flex-col h-full">
+          <p class="font-display uppercase tracking-widest text-xs text-gold">The Shield3 barrier</p>
+          <h3 class="font-display font-600 uppercase text-2xl mt-2">Bonds to the surface. Stays put.</h3>
+          <div class="gold-rule mt-5 mb-6"></div>
+          <ul class="space-y-4 text-paper/85 font-300 flex-grow">
+            <li class="flex gap-3 items-start"><span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold text-xs">✓</span> Bonds onto the surface as it's applied</li>
+            <li class="flex gap-3 items-start"><span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold text-xs">✓</span> Keeps working long after it dries</li>
+            <li class="flex gap-3 items-start"><span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold text-xs">✓</span> Stays active between routine cleanings</li>
+          </ul>
+          <svg viewBox="0 0 320 64" class="w-full mt-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="10" y1="50" x2="310" y2="50" stroke="#c9a227" stroke-width="2"/>
+            <g stroke="#c9a227" stroke-width="2"><line x1="40" y1="50" x2="40" y2="32"/><line x1="90" y1="50" x2="90" y2="32"/><line x1="140" y1="50" x2="140" y2="32"/><line x1="190" y1="50" x2="190" y2="32"/><line x1="240" y1="50" x2="240" y2="32"/><line x1="290" y1="50" x2="290" y2="32"/></g>
+            <g fill="#e3c25a" class="shimmer"><circle cx="40" cy="30" r="3"/><circle cx="90" cy="30" r="3"/><circle cx="140" cy="30" r="3"/><circle cx="190" cy="30" r="3"/><circle cx="240" cy="30" r="3"/><circle cx="290" cy="30" r="3"/></g>
+            <text x="160" y="18" text-anchor="middle" font-family="Oswald" font-size="10" letter-spacing="2" fill="#e3c25a">BONDED &amp; PERSISTENT</text>
+          </svg>
         </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Final CTA -->
-    <div class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h2 class="text-4xl font-semibold tracking-tight mb-6">Ready to strengthen your facility?</h2>
-        <p class="text-xl text-gray-600 mb-8">Let’s talk about how Shield3 can fit into your current routine.</p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="contact.html" 
-               class="px-8 py-4 bg-black text-white font-semibold rounded-3xl text-lg hover:bg-gray-900 transition-all">
-                Request a Facility Assessment
-            </a>
-            <a href="proof.html" 
-               class="px-8 py-4 border border-gray-300 font-semibold rounded-3xl text-lg hover:bg-gray-50 transition-all">
-                View the Proof
-            </a>
-        </div>
+<!-- ============ WHY IT MATTERS ============ -->
+<section id="why" class="deep-soft text-paper py-24 md:py-28 relative overflow-hidden slant-t">
+  <div class="tex grain"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="font-display kicker uppercase text-gold text-xs mb-4">Why it matters</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">Protection your whole program can feel good about</h2>
     </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-14">
+      <div class="gedge lift p-8 reveal">
+        <p class="font-display uppercase tracking-widest text-xs text-gold">Schools &amp; ADs</p>
+        <h3 class="font-display font-600 uppercase text-xl mt-3">A proactive layer you can stand behind</h3>
+        <p class="text-paper/70 font-300 mt-3 leading-relaxed text-[15px]">Scoped to your facility and measurable — something concrete to show parents and boards that your spaces are cared for around the clock, not just right after the mop.</p>
+      </div>
+      <div class="gedge lift p-8 reveal">
+        <p class="font-display uppercase tracking-widest text-xs text-gold">Coaches &amp; programs</p>
+        <h3 class="font-display font-600 uppercase text-xl mt-3">One less thing to manage</h3>
+        <p class="text-paper/70 font-300 mt-3 leading-relaxed text-[15px]">A persistent layer works quietly in the background on the surfaces and gear your athletes rotate through every practice.</p>
+      </div>
+      <div class="gedge lift p-8 reveal">
+        <p class="font-display uppercase tracking-widest text-xs text-gold">Parents &amp; athletes</p>
+        <h3 class="font-display font-600 uppercase text-xl mt-3">Real peace of mind</h3>
+        <p class="text-paper/70 font-300 mt-3 leading-relaxed text-[15px]">The spaces young athletes spend their afternoons in stay protected through the whole day — steady, quiet reassurance.</p>
+      </div>
+    </div>
+    <div class="mt-12 text-center reveal">
+      <a href="contact.html" class="inline-block font-display uppercase tracking-widest text-sm bg-gold text-ink px-7 py-4 hover:bg-goldlt transition shadow-[0_18px_40px_-15px_rgba(201,162,39,.5)]">Request a Treatment for Your Facility →</a>
+    </div>
+  </div>
+</section>
 
-    <footer class="border-t py-8">
-        <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500">
-            © Shield3 Athletics. Protection that stays between cleanings.
-        </div>
-    </footer>
+<!-- ============ CREDIBILITY ============ -->
+<section id="credibility" class="bg-paper py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-5 reveal">
+      <p class="font-display kicker uppercase text-gold text-xs mb-4">Credibility</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">Proof, not adjectives</h2>
+      <div class="gold-rule mt-6"></div>
+      <p class="text-ink/75 font-300 mt-6 leading-relaxed">Confirmed by independent laboratory testing, and measured in the field with ATP testing — a fast, standard way to gauge how clean a surface is. We keep lab and field evidence separate, and publish only what we can source.</p>
+      <a href="proof.html" class="inline-block mt-7 font-display uppercase tracking-widest text-sm bg-ink text-paper px-6 py-3.5 hover:bg-slate transition">See the proof →</a>
+    </div>
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5 reveal">
+      <div class="paper-card p-7 lift rounded-sm">
+        <p class="font-display uppercase tracking-widest text-[11px] text-gold">Laboratory</p>
+        <h3 class="font-display font-600 uppercase text-xl mt-2">Independent validation</h3>
+        <p class="text-ink/65 font-300 text-sm mt-3 leading-relaxed">Evaluated by an independent laboratory under recognized test methods — reported as its own, separately-sourced result.</p>
+      </div>
+      <div class="paper-card p-7 lift rounded-sm">
+        <p class="font-display uppercase tracking-widest text-[11px] text-gold">Field</p>
+        <h3 class="font-display font-600 uppercase text-xl mt-2">Measured, not claimed</h3>
+        <p class="text-ink/65 font-300 text-sm mt-3 leading-relaxed">We document surface conditions before and after treatment with ATP measurement in real athletic settings.</p>
+      </div>
+      <div class="deep-soft text-paper p-7 sm:col-span-2 rounded-sm gedge relative overflow-hidden">
+        <div class="tex grain"></div>
+        <p class="text-paper/75 font-300 text-sm leading-relaxed relative z-10"><span class="text-gold font-display uppercase tracking-widest text-[11px] block mb-2">Our standard</span> Shield3 is a persistent barrier layer that <span class="text-paper font-500">complements — does not replace — routine cleaning.</span> We don't claim it makes surfaces "sterile," and we report laboratory and field evidence separately.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ============ PILOTS ============ -->
+<section id="pilots" class="deep text-paper py-24 md:py-28 relative overflow-hidden slant-t slant-b -mt-8">
+  <div class="tex grain"></div>
+  <div class="tex grid-lines"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 reveal">
+      <p class="font-display kicker uppercase text-gold text-xs mb-4">Pilot programs</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">See it work in your own facility</h2>
+      <div class="gold-rule mt-6"></div>
+      <p class="text-paper/80 font-300 mt-6 leading-relaxed text-lg">A structured way to evaluate Shield3 in your own space — so the decision rests on results from your facility, not a brochure.</p>
+      <ul class="grid sm:grid-cols-3 gap-4 mt-8 text-sm">
+        <li class="gedge p-4"><span class="font-display uppercase text-gold text-xs tracking-widest block mb-1">01 Scope</span><span class="text-paper/70 font-300">We map your high-touch zones together.</span></li>
+        <li class="gedge p-4"><span class="font-display uppercase text-gold text-xs tracking-widest block mb-1">02 Apply</span><span class="text-paper/70 font-300">We treat surfaces and storage air, around your routine.</span></li>
+        <li class="gedge p-4"><span class="font-display uppercase text-gold text-xs tracking-widest block mb-1">03 Measure</span><span class="text-paper/70 font-300">We document conditions with ATP readings.</span></li>
+      </ul>
+    </div>
+    <div class="lg:col-span-5 reveal">
+      <div class="glass p-8 text-center rounded-sm">
+        <p class="font-display uppercase tracking-widest text-xs text-gold">Get started</p>
+        <h3 class="font-display font-600 uppercase text-2xl mt-3">Start a pilot conversation</h3>
+        <p class="text-paper/70 font-300 mt-3 text-[15px]">Tell us about your facility and we'll walk you through what a pilot looks like for your program.</p>
+        <a href="contact.html" class="block mt-6 font-display uppercase tracking-widest text-sm bg-gold text-ink px-6 py-4 hover:bg-goldlt transition">Learn About Pilot Programs →</a>
+        <a href="contact.html" class="block mt-3 font-display uppercase tracking-widest text-xs border border-paper/30 text-paper px-6 py-3.5 hover:border-gold hover:text-gold transition">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" class="bg-paper py-20 md:py-24">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-10 items-center reveal">
+    <div>
+      <p class="font-display kicker uppercase text-gold text-xs mb-4">Pricing</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">Scoped to your space</h2>
+      <div class="gold-rule mt-6"></div>
+      <p class="text-ink/75 font-300 mt-6 leading-relaxed">Facility programs are priced to your square footage, surfaces, and schedule — not a one-size-fits-all sticker. The fastest way to a real number is a short conversation.</p>
+    </div>
+    <div class="paper-card p-8 rounded-sm">
+      <h3 class="font-display font-600 uppercase text-xl">Request a quote</h3>
+      <p class="text-ink/70 font-300 mt-2 text-[15px]">Send us the basics on your facility and we'll scope a treatment and a quote with you.</p>
+      <a href="contact.html" class="inline-block mt-5 font-display uppercase tracking-widest text-xs bg-gold text-ink px-6 py-3.5 hover:bg-goldlt transition">Request a Quote →</a>
+      <p class="text-xs text-ash mt-5 font-300">Shopping as an individual or family instead? <a href="products.html" class="text-gold hover:text-goldlt underline">Visit the store →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="deep-soft text-paper py-20 relative overflow-hidden slant-t">
+  <div class="tex grain"></div>
+  <div class="max-w-4xl mx-auto px-5 text-center relative z-10 reveal">
+    <p class="font-display kicker uppercase text-gold text-xs mb-4">About</p>
+    <p class="text-xl md:text-2xl font-300 leading-relaxed text-paper/85">We exist to close the protection gap in athletic environments — the window after each cleaning when shared surfaces are exposed again. One reliable system across surface, air, and gear, held to a strict, proof-first standard.</p>
+    <a href="contact.html" class="inline-block mt-8 font-display uppercase tracking-widest text-sm border border-gold text-gold px-6 py-3 hover:bg-gold hover:text-ink transition">Talk to us →</a>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="deep text-paper py-24 md:py-28 text-center relative overflow-hidden">
+  <div class="tex grain"></div>
+  <div class="absolute left-1/2 -translate-x-1/2 -top-24 h-[420px] w-[420px] rounded-full orb" style="background:radial-gradient(circle, rgba(201,162,39,.18), transparent 65%)"></div>
+  <div class="max-w-3xl mx-auto px-5 reveal relative z-10">
+    <p class="font-display uppercase tracking-widest text-sm text-gold mb-5">Three Layers. Total Protection. For Every Young Athlete.</p>
+    <h2 class="font-display font-700 uppercase text-4xl md:text-6xl leading-[0.95]">Bring Shield3 <span class="text-gold">to your facility</span></h2>
+    <p class="text-ash font-300 mt-5 text-lg">Tell us about your space and we'll scope a treatment, a quote, or a pilot — whatever fits your program best.</p>
+    <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="contact.html" class="font-display uppercase tracking-widest text-sm bg-gold text-ink px-8 py-4 hover:bg-goldlt transition shadow-[0_18px_40px_-15px_rgba(201,162,39,.6)]">Request a Treatment / Quote</a>
+      <a href="contact.html" class="font-display uppercase tracking-widest text-sm border border-paper/40 text-paper px-8 py-4 hover:border-gold hover:text-gold transition">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-paper border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3">
+        <span class="inline-block h-7 w-7 border-2 border-gold relative"><span class="absolute inset-[5px] bg-gold"></span></span>
+        <span class="font-display font-700 text-lg tracking-wide">SHIELD<span class="text-gold">3</span></span>
+      </div>
+      <p class="text-ash text-sm font-300 mt-3">For Every Young Athlete.</p>
+    </div>
+    <div>
+      <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Explore</h4>
+      <ul class="space-y-2 text-sm text-paper/75 font-300">
+        <li><a href="how-it-works.html" class="hover:text-gold">How It Works</a></li>
+        <li><a href="products.html" class="hover:text-gold">Products</a></li>
+        <li><a href="#solutions" class="hover:text-gold">Solutions</a></li>
+        <li><a href="proof.html" class="hover:text-gold">Proof</a></li>
+        <li><a href="#pricing" class="hover:text-gold">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Company</h4>
+      <ul class="space-y-2 text-sm text-paper/75 font-300">
+        <li><a href="#pilots" class="hover:text-gold">Pilot Programs</a></li>
+        <li><a href="#about" class="hover:text-gold">About</a></li>
+        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+        <li><a href="proof.html" class="hover:text-gold">Proof &amp; Testing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Get started</h4>
+      <a href="contact.html" class="block text-center font-display uppercase tracking-widest text-xs bg-gold text-ink px-4 py-3 hover:bg-goldlt transition mb-3">Request a Quote</a>
+      <a href="contact.html" class="block text-center font-display uppercase tracking-widest text-xs border border-paper/30 text-paper px-4 py-3 hover:border-gold hover:text-gold transition">Learn About Pilots</a>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col md:flex-row gap-4 justify-between items-center text-xs text-ash">
+      <p>© 2026 Shield3 Athletics. All rights reserved. <span class="hidden md:inline">·</span> <a href="#" class="hover:text-paper">Privacy</a> · <a href="#" class="hover:text-paper">Terms</a></p>
+      <p class="text-center md:text-right max-w-xl font-300">Pursuing EPA N-List registration; products are not represented as EPA registered. Complements — does not replace — routine cleaning.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
