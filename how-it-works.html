@@ -3,187 +3,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How It Works — Shield3 Athletics</title>
-<meta name="description" content="The science behind Shield3: SurfaceBond bonded-surface technology, the three-layer system, and why we test with ATP measurement.">
+<title>How It Works — Shield3 Athletics | The Science of a Barrier That Doesn't Wash Away</title>
+<meta name="description" content="The science behind Shield3 — a bonded surface barrier that stays active between cleanings, the three-layer system, and why we verify results in the field with ATP measurement.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = { theme: { extend: {
-  colors: { ink:'#0e0e0e', coal:'#161616', slate:'#202020', gold:'#c9a227', goldlt:'#e3c25a', paper:'#f5f3ec', ash:'#9c968b' },
-  fontFamily: { display:['Oswald','sans-serif'], body:['"IBM Plex Sans"','sans-serif'] },
-  letterSpacing: { ultra:'0.28em' }
-}}}
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      ink:'#0a0d12', coal:'#11161f', slate:'#1a2230',
+      blue:'#2a9df4', bluelt:'#5bb8ff', bluedp:'#1473cc',
+      silver:'#cfd6df', paper:'#eef2f7', ash:'#8a93a3'
+    },
+    fontFamily: { display:['Oswald','sans-serif'], body:['"IBM Plex Sans"','sans-serif'] },
+    letterSpacing: { ultra:'0.28em' }
+  }}
+}
 </script>
 <style>
   html{scroll-behavior:smooth} body{font-family:'IBM Plex Sans',sans-serif}
   .font-display{font-family:'Oswald',sans-serif} .kicker{letter-spacing:.28em}
-  .tracking-ultra{letter-spacing:.28em}
-  .font-300{font-weight:300}.font-400{font-weight:400}.font-500{font-weight:500}.font-600{font-weight:600}.font-700{font-weight:700}
-  .carbon{background-color:#0e0e0e;background-image:linear-gradient(135deg,rgba(255,255,255,.025) 25%,transparent 25%),linear-gradient(225deg,rgba(255,255,255,.025) 25%,transparent 25%),linear-gradient(45deg,rgba(0,0,0,.25) 25%,transparent 25%),linear-gradient(315deg,rgba(0,0,0,.25) 25%,transparent 25%);background-position:8px 0,8px 0,0 0,0 0;background-size:16px 16px}
-  .gold-rule{height:3px;width:64px;background:#c9a227}
+  .vector{font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.04em;line-height:.9}
+  .src{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:10px}
+  .chip{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+  .blue-rule{height:3px;width:64px;background:linear-gradient(90deg,#2a9df4,#5bb8ff)}
+
+  .chrome{background:linear-gradient(180deg,#ffffff,#cfd6df 45%,#8b95a3);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .electric{background:linear-gradient(92deg,#5bb8ff,#2a9df4 55%,#1473cc);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .deep{background:
+      radial-gradient(900px 520px at 85% -10%, rgba(42,157,244,.20), transparent 60%),
+      radial-gradient(700px 600px at 0% 110%, rgba(42,157,244,.08), transparent 55%),
+      linear-gradient(180deg,#0c111a,#070a0f);}
+  .deep-soft{background:
+      radial-gradient(700px 420px at 15% 0%, rgba(42,157,244,.12), transparent 60%),
+      linear-gradient(180deg,#11161f,#0a0e14);}
+  .tex{position:absolute;inset:0;pointer-events:none}
+  .grain{opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  .grid-lines{opacity:.55;background-image:linear-gradient(rgba(120,180,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,180,255,.05) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent);mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent)}
+
+  .gedge{position:relative;background:#11161f;border-radius:3px;box-shadow:0 24px 50px -28px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.04)}
+  .gedge::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+    background:linear-gradient(155deg,rgba(42,157,244,.6),rgba(255,255,255,.12) 38%,transparent 70%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .paper-card{background:#fff;box-shadow:0 24px 50px -34px rgba(10,13,18,.5);border:1px solid rgba(10,13,18,.06)}
+
+  /* IMAGE FRAMES — full, natural size */
+  .shot{display:block;width:100%;border-radius:4px;overflow:hidden;background:#0e1420;border:1px solid rgba(120,180,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+  .shot img{display:block;width:100%;height:auto}
+  .shot.bare{background:transparent;border:none;box-shadow:none;border-radius:0}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .slant-t{clip-path:polygon(0 3.5vw,100% 0,100% 100%,0 100%)}
+  .slant-b{clip-path:polygon(0 0,100% 0,100% calc(100% - 3.5vw),0 100%)}
+  .orb{animation:pulse 6s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
+
 <body class="bg-paper text-ink antialiased">
 
-<!-- UTILITY BAR -->
-<div class="carbon text-paper text-[11px] tracking-wide border-b border-white/10">
+<!-- ============ UTILITY BAR ============ -->
+<div class="bg-ink text-paper text-[11px] tracking-wide border-b border-white/10">
   <div class="max-w-7xl mx-auto px-5 py-2 flex items-center justify-between">
-    <span class="font-display kicker text-gold uppercase">Three Layers. Total Protection.</span>
+    <span class="font-display kicker uppercase"><span class="text-silver">Backed by Science.</span> <span class="text-blue">Rigorous testing. Real results.</span></span>
     <nav class="hidden sm:flex items-center gap-5 text-ash uppercase font-display tracking-widest">
-      <a href="#" class="hover:text-paper transition">Search</a><a href="#" class="hover:text-paper transition">Account</a><a href="#" class="hover:text-paper transition">Cart (0)</a>
+      <a href="#" class="hover:text-paper transition">Search</a>
+      <a href="#" class="hover:text-paper transition">Account</a>
+      <a href="#" class="hover:text-paper transition">Cart (0)</a>
     </nav>
   </div>
 </div>
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-ink/95 backdrop-blur border-b border-white/10 text-paper">
-  <div class="max-w-7xl mx-auto px-5"><div class="flex items-center justify-between h-[68px]">
-    <a href="index.html" class="flex items-center gap-3">
-      <span class="inline-block h-8 w-8 border-2 border-gold relative"><span class="absolute inset-[6px] bg-gold"></span></span>
-      <span class="font-display font-700 text-xl tracking-wide leading-none">SHIELD<span class="text-gold">3</span><span class="block text-[10px] tracking-ultra text-ash font-400 mt-0.5">ATHLETICS</span></span>
-    </a>
-    <nav class="hidden lg:flex items-center gap-7 font-display uppercase text-sm tracking-widest">
-      <a href="how-it-works.html" class="text-gold">How It Works</a>
-      <a href="products.html" class="hover:text-gold transition">Products</a>
-      <a href="index.html#solutions" class="hover:text-gold transition">Solutions</a>
-      <a href="proof.html" class="hover:text-gold transition">Proof</a>
-      <a href="index.html#pricing" class="hover:text-gold transition">Pricing</a>
-      <a href="index.html#partners" class="hover:text-gold transition">Partners</a>
-      <a href="index.html#about" class="hover:text-gold transition">About</a>
-      <a href="contact.html" class="hover:text-gold transition">Contact</a>
-    </nav>
-    <div class="hidden lg:flex items-center gap-3">
-      <a href="contact.html" class="border border-gold text-gold px-4 py-2 text-xs font-display uppercase tracking-widest hover:bg-gold hover:text-ink transition">Request a Quote</a>
-      <a href="products.html" class="bg-gold text-ink px-4 py-2 text-xs font-display uppercase tracking-widest hover:bg-goldlt transition">Shop Products</a>
+<!-- ============ HEADER / NAV ============ -->
+<header class="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b border-white/10 text-paper">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex items-center justify-between h-[68px]">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <svg width="34" height="38" viewBox="0 0 34 38" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="chr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef2f7"/><stop offset=".5" stop-color="#aab4c2"/><stop offset="1" stop-color="#6f7a89"/></linearGradient></defs>
+          <path d="M17 2 L31 8 V19 C31 28 25 33 17 36 C9 33 3 28 3 19 V8 Z" fill="url(#chr)" stroke="#2a9df4" stroke-width="1.5"/>
+          <text x="17" y="23" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="13" fill="#0a0d12">S3</text>
+        </svg>
+        <span class="font-display font-700 text-xl tracking-wide leading-none">
+          <span class="chrome">SHIELD</span><span class="electric">3</span><span class="block text-[10px] tracking-ultra text-ash font-400 mt-0.5">ATHLETICS</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 font-display uppercase text-sm tracking-widest">
+        <a href="how-it-works.html" class="text-blue transition">How It Works</a>
+        <a href="products.html" class="hover:text-blue transition">Products</a>
+        <a href="index.html#solutions" class="hover:text-blue transition">Solutions</a>
+        <a href="proof.html" class="hover:text-blue transition">Proof</a>
+        <a href="index.html#pricing" class="hover:text-blue transition">Pricing</a>
+        <a href="index.html#pilots" class="hover:text-blue transition">Pilots</a>
+        <a href="index.html#about" class="hover:text-blue transition">About</a>
+        <a href="contact.html" class="hover:text-blue transition">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="contact.html" class="font-display uppercase text-xs tracking-widest border border-blue text-blue px-4 py-2.5 hover:bg-blue hover:text-ink transition">Request a Quote</a>
+        <a href="products.html" class="font-display uppercase text-xs tracking-widest bg-blue text-ink px-4 py-2.5 hover:bg-bluelt transition">Shop Products</a>
+      </div>
+
+      <button id="menuBtn" class="lg:hidden text-paper p-2" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
-    <button id="menuBtn" class="lg:hidden text-paper" aria-label="Menu">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-  </div></div>
-  <div id="mobileMenu" class="hidden lg:hidden bg-ink border-t border-white/10 text-paper">
-    <nav class="flex flex-col px-5 py-2 font-display uppercase text-sm tracking-widest">
-      <a href="how-it-works.html" class="py-3 border-b border-white/5 text-gold">How It Works</a>
-      <a href="products.html" class="py-3 border-b border-white/5 hover:text-gold">Products</a>
-      <a href="index.html#solutions" class="py-3 border-b border-white/5 hover:text-gold">Solutions</a>
-      <a href="proof.html" class="py-3 border-b border-white/5 hover:text-gold">Proof</a>
-      <a href="index.html#pricing" class="py-3 border-b border-white/5 hover:text-gold">Pricing</a>
-      <a href="index.html#partners" class="py-3 border-b border-white/5 hover:text-gold">Partners</a>
-      <a href="index.html#about" class="py-3 border-b border-white/5 hover:text-gold">About</a>
-      <a href="contact.html" class="py-3 border-b border-white/5 hover:text-gold">Contact</a>
-      <div class="flex gap-3 pt-4 pb-2">
-        <a href="contact.html" class="flex-1 text-center border border-gold text-gold px-4 py-3 text-xs">Request a Quote</a>
-        <a href="products.html" class="flex-1 text-center bg-gold text-ink px-4 py-3 text-xs">Shop Products</a>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-ink">
+    <nav class="max-w-7xl mx-auto px-5 py-4 flex flex-col font-display uppercase tracking-widest text-sm">
+      <a href="how-it-works.html" class="py-3 border-b border-white/5 text-blue">How It Works</a>
+      <a href="products.html" class="py-3 border-b border-white/5 hover:text-blue">Products</a>
+      <a href="index.html#solutions" class="py-3 border-b border-white/5 hover:text-blue">Solutions</a>
+      <a href="proof.html" class="py-3 border-b border-white/5 hover:text-blue">Proof</a>
+      <a href="index.html#pricing" class="py-3 border-b border-white/5 hover:text-blue">Pricing</a>
+      <a href="index.html#pilots" class="py-3 border-b border-white/5 hover:text-blue">Pilots</a>
+      <a href="index.html#about" class="py-3 border-b border-white/5 hover:text-blue">About</a>
+      <a href="contact.html" class="py-3 border-b border-white/5 hover:text-blue">Contact</a>
+      <div class="flex gap-3 pt-4">
+        <a href="contact.html" class="flex-1 text-center border border-blue text-blue px-4 py-3 text-xs">Request a Quote</a>
+        <a href="products.html" class="flex-1 text-center bg-blue text-ink px-4 py-3 text-xs">Shop Products</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- PAGE HERO -->
-<section class="carbon text-paper py-16 md:py-20">
-  <div class="max-w-7xl mx-auto px-5">
-    <p class="font-display kicker uppercase text-gold text-xs mb-4">How It Works</p>
-    <h1 class="font-display font-700 uppercase text-4xl md:text-6xl leading-[0.95] max-w-3xl">The science of a barrier that <span class="text-gold">doesn't wash away</span></h1>
-    <p class="text-paper/75 font-300 mt-6 max-w-2xl text-lg">Three things to understand: the chemistry, the system it powers, and why we measure results in the field.</p>
+<!-- ============ HERO (hiw1) ============ -->
+<section class="deep text-paper relative overflow-hidden">
+  <div class="tex grain"></div>
+  <div class="tex grid-lines"></div>
+  <div class="absolute -right-32 -top-24 h-[460px] w-[460px] rounded-full orb" style="background:radial-gradient(circle, rgba(42,157,244,.28), transparent 65%)"></div>
+  <div class="max-w-7xl mx-auto px-5 py-12 md:py-16 relative z-10">
+    <h1 class="sr-only">How Shield3 works — the science of a barrier that doesn't wash away.</h1>
+    <p class="font-display kicker uppercase text-blue text-xs mb-5 text-center">How It Works</p>
+    <div class="shot">
+      <img src="Website%20Visuals/hiw1.png" alt="A barrier that doesn't wash away — Shield3 bonds to the surface and stays between cleanings, shown on a locker-room handle as water rinses off but the bonded barrier remains.">
+    </div>
+    <p class="text-center text-lg md:text-xl text-paper/80 font-300 max-w-3xl mx-auto mt-8">Three things to understand: how the barrier works, the system it powers, and why we measure results in the field.</p>
+    <div class="mt-7 flex flex-wrap justify-center gap-3">
+      <a href="#science" class="font-display uppercase tracking-widest text-xs border border-paper/30 text-paper px-5 py-3 hover:border-blue hover:text-blue transition">The Science</a>
+      <a href="#system" class="font-display uppercase tracking-widest text-xs border border-paper/30 text-paper px-5 py-3 hover:border-blue hover:text-blue transition">The Three-Layer System</a>
+      <a href="#atp" class="font-display uppercase tracking-widest text-xs border border-paper/30 text-paper px-5 py-3 hover:border-blue hover:text-blue transition">ATP Proof</a>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 bg-black/50 relative z-10">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-[11px] md:text-xs text-ash font-display uppercase tracking-widest text-center">
+      <span>Independent lab–confirmed efficacy</span><span class="text-blue/50">•</span>
+      <span>Verified in the field with ATP measurement</span><span class="text-blue/50">•</span>
+      <span>Complements — doesn't replace — routine cleaning</span><span class="text-blue/50">•</span>
+      <span>Pursuing <span class="text-paper">EPA N-List</span> registration</span>
+    </div>
   </div>
 </section>
 
-<!-- SUB-NAV -->
-<div class="bg-coal text-paper border-b border-white/10 sticky top-[68px] z-40">
-  <div class="max-w-7xl mx-auto px-5 flex gap-6 overflow-x-auto font-display uppercase text-xs tracking-widest py-3 text-ash">
-    <a href="#science" class="hover:text-gold whitespace-nowrap">The Science</a>
-    <a href="#system" class="hover:text-gold whitespace-nowrap">The Three-Layer System</a>
-    <a href="#atp" class="hover:text-gold whitespace-nowrap">ATP Proof — Why We Test</a>
-  </div>
-</div>
-
-<!-- SCIENCE -->
-<section id="science" class="bg-paper py-20 scroll-mt-32">
-  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-12 gap-12">
-    <div class="lg:col-span-4">
-      <p class="font-display kicker uppercase text-gold text-xs mb-3">01 — The Science</p>
+<!-- ============ 01 — THE SCIENCE (hiw2) ============ -->
+<section id="science" class="bg-paper py-20 md:py-24">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl reveal">
+      <p class="font-display kicker uppercase text-blue text-xs mb-4">01 — The Science</p>
       <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">A barrier that bonds and stays</h2>
-      <div class="gold-rule mt-6"></div>
+      <div class="blue-rule mt-6"></div>
+      <div class="text-lg leading-relaxed text-ink/80 font-300 space-y-5 mt-6">
+        <p>Most surface products do their job while they're wet, then wash away with the very next cleaning — leaving nothing behind to protect the surface in between.</p>
+        <p class="text-ink font-500">Shield3 works differently. Its surface layer bonds onto the surface and stays put, forming a persistent protective barrier that remains active between routine cleanings.</p>
+        <p>That's why we describe Shield3 as a barrier that <span class="text-ink font-500">complements your cleaning — not a replacement for it.</span> You keep cleaning as you always have; the bonded barrier works in the gap between those cleanings.</p>
+      </div>
     </div>
-    <div class="lg:col-span-8 text-lg leading-relaxed text-ink/80 font-300 space-y-5">
-      <p>Most surface products do their job while they're wet, then wash away with the very next cleaning — leaving nothing behind to protect the surface in between.</p>
-      <p>Shield3 SurfaceBond works differently. It <span class="font-500 text-ink">bonds onto the surface and stays put</span>, forming a <span class="font-500 text-ink">persistent antimicrobial barrier</span> that remains active between routine cleanings.</p>
-      <p>This is why we describe Shield3 as a <span class="font-500 text-ink">barrier that complements your cleaning, not a replacement for it.</span> You keep cleaning as you always have; the bonded barrier works in the gap between those cleanings.</p>
-      <p class="text-sm text-ash">Layer 1 surface chemistry (System 3 SDP) is manufactured with 2V Industries and private-labeled for Shield3 Athletics.</p>
+    <div class="shot mt-10 reveal">
+      <img src="Website%20Visuals/hiw2.png" alt="How the bonded barrier works in three stages: during cleaning the surface is wet, after it dries a thin bonded film remains, and between cleanings the persistent bonded barrier stays active.">
     </div>
   </div>
 </section>
 
-<!-- SYSTEM -->
-<section id="system" class="bg-coal text-paper py-20 scroll-mt-32 border-y border-white/10">
+<!-- ============ 02 — THE SYSTEM (hiw3) ============ -->
+<section id="system" class="deep text-paper py-24 md:py-28 relative overflow-hidden slant-t slant-b -mt-8">
+  <div class="tex grain"></div><div class="tex grid-lines"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10">
+    <div class="max-w-3xl reveal">
+      <p class="font-display kicker uppercase text-blue text-xs mb-4">02 — The System</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-5xl leading-tight"><span class="chrome">The three-</span><span class="electric">layer system</span></h2>
+      <p class="text-ash mt-5 font-300 text-lg">One system that meets contamination where it travels — across surfaces, through stored air, and on gear.</p>
+    </div>
+    <div class="shot mt-10 reveal">
+      <img src="Website%20Visuals/hiw3.png" alt="The Shield3 three-layer system: Layer 1 Surface bonds a barrier to high-touch surfaces, Layer 2 Air treats the air inside enclosed storage like lockers and gear bags, and Layer 3 Gear carries protection into the wash and is in development.">
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 mt-10">
+      <div class="gedge p-6 reveal">
+        <div class="flex items-baseline justify-between"><h3 class="vector text-2xl text-blue">SURFACE</h3><span class="src text-ash">Layer 01</span></div>
+        <p class="text-paper/70 font-300 text-[15px] mt-3">A bonded barrier for high-touch surfaces — benches, handles, mats, lockers. It bonds on and keeps protecting after it dries, active between routine cleanings.</p>
+      </div>
+      <div class="gedge p-6 reveal">
+        <div class="flex items-baseline justify-between"><h3 class="vector text-2xl text-blue">AIR</h3><span class="src text-ash">Layer 02</span></div>
+        <p class="text-paper/70 font-300 text-[15px] mt-3">Treatment for the air inside enclosed storage — closed lockers, gear bags, and equipment rooms — where moisture and odor build up between uses.</p>
+      </div>
+      <div class="gedge p-6 reveal" style="background:#0d1117">
+        <div class="flex items-baseline justify-between"><h3 class="vector text-2xl text-paper/40">GEAR</h3><span class="chip text-blue border border-blue/40 px-2 py-1">In development</span></div>
+        <p class="text-paper/55 font-300 text-[15px] mt-3">Protection carried into the wash, reaching gear and uniforms. In active development — not yet a shipping product.</p>
+      </div>
+    </div>
+    <p class="text-center font-display uppercase tracking-widest text-sm text-ash mt-12">Protect the Surface <span class="text-blue">·</span> Purify the Air <span class="text-blue">·</span> Defend the Gear</p>
+  </div>
+</section>
+
+<!-- ============ 03 — WHY WE TEST (hiw4) ============ -->
+<section id="atp" class="bg-paper py-20 md:py-24">
   <div class="max-w-7xl mx-auto px-5">
-    <p class="font-display kicker uppercase text-gold text-xs mb-3">02 — The System</p>
-    <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">The three-layer system</h2>
-    <div class="gold-rule mt-6 mb-12"></div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="border border-white/15 p-7">
-        <p class="font-display uppercase tracking-widest text-[11px] text-gold">Layer 1 &middot; Surface</p>
-        <h3 class="font-display font-600 uppercase text-xl mt-3">System 3 SDP</h3>
-        <p class="text-paper/70 font-300 mt-3 text-[15px] leading-relaxed">Shield3 SurfaceBond technology bonds onto surfaces, forming a persistent antimicrobial barrier that stays active between routine cleanings. Manufactured with 2V Industries; private-labeled for Shield3 Athletics.</p>
-      </div>
-      <div class="border border-white/15 p-7">
-        <p class="font-display uppercase tracking-widest text-[11px] text-gold">Layer 2 &middot; Air</p>
-        <h3 class="font-display font-600 uppercase text-xl mt-3">Storage Defense Sachets</h3>
-        <p class="text-paper/70 font-300 mt-3 text-[15px] leading-relaxed">Chlorine dioxide (ClO&#8322;) sachets and tablets for continuous atmospheric treatment in enclosed storage. Private-labeled via Beckart Environmental.</p>
-      </div>
-      <div class="border border-white/15 p-7">
-        <p class="font-display uppercase tracking-widest text-[11px] text-gold">Layer 3 &middot; Gear</p>
-        <h3 class="font-display font-600 uppercase text-xl mt-3">Laundry Defense Sheets</h3>
-        <p class="text-paper/70 font-300 mt-3 text-[15px] leading-relaxed">SurfaceBond protection delivered through a dissolvable laundry sheet, extending the barrier into the wash cycle. In active development — <span class="text-paper font-500">not yet a shipping product.</span></p>
-      </div>
-    </div>
-    <p class="text-center font-display uppercase tracking-widest text-sm text-ash mt-10">Protect the Surface <span class="text-gold">&middot;</span> Purify the Air <span class="text-gold">&middot;</span> Defend the Gear</p>
-  </div>
-</section>
-
-<!-- ATP -->
-<section id="atp" class="bg-paper py-20 scroll-mt-32">
-  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-12 gap-12">
-    <div class="lg:col-span-4">
-      <p class="font-display kicker uppercase text-gold text-xs mb-3">03 — Why We Test</p>
+    <div class="max-w-3xl reveal">
+      <p class="font-display kicker uppercase text-blue text-xs mb-4">03 — Why We Test</p>
       <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">ATP measurement</h2>
-      <div class="gold-rule mt-6"></div>
+      <div class="blue-rule mt-6"></div>
+      <div class="text-lg leading-relaxed text-ink/80 font-300 space-y-5 mt-6">
+        <p>ATP testing measures <span class="text-ink font-500">bioburden</span> — the amount of biological residue on a surface — reported in relative light units (RLU). It's a fast, standard way to gauge how clean a surface is.</p>
+        <p>In the field, we take an RLU reading before treatment and again after, on the same marked zones, to document the change in surface bioburden under real conditions.</p>
+        <p>We keep this field evidence <span class="text-ink font-500">separate</span> from our laboratory validation, and we report ATP results as bioburden measurements — not as pathogen-specific kill claims.</p>
+      </div>
     </div>
-    <div class="lg:col-span-8 text-lg leading-relaxed text-ink/80 font-300 space-y-5">
-      <p>ATP testing measures <span class="font-500 text-ink">bioburden</span> — the amount of biological residue on a surface — reported in relative light units (RLU). It's a fast, standard way to gauge how clean a surface is.</p>
-      <p>In the field, we take an RLU reading before treatment and again after, on the same marked zones, to <span class="font-500 text-ink">document the change</span> in surface bioburden under real conditions.</p>
-      <p>We keep this field evidence separate from our laboratory chemistry validation, and we report ATP results as bioburden measurements — not as pathogen-specific kill claims.</p>
-      <p><a href="proof.html" class="font-display uppercase tracking-widest text-sm text-gold hover:text-goldlt">See the proof we hold today &rarr;</a></p>
+    <div class="shot mt-10 reveal">
+      <img src="Website%20Visuals/hiw4.png" alt="ATP field measurement: a handheld luminometer swabs a marked surface zone, and a before-and-after comparison shows surface bioburden in RLU dropping after treatment. Illustrative.">
+    </div>
+    <div class="mt-8 reveal">
+      <a href="proof.html" class="inline-block font-display uppercase tracking-widest text-sm bg-ink text-paper px-6 py-3.5 hover:bg-slate transition">See the proof we hold today →</a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="carbon text-paper py-16 text-center">
-  <div class="max-w-3xl mx-auto px-5">
-    <h2 class="font-display font-700 uppercase text-3xl md:text-5xl leading-tight">Ready to put the barrier to work?</h2>
+<!-- ============ CTA ============ -->
+<section class="deep-soft text-paper py-20 relative overflow-hidden slant-t">
+  <div class="tex grain"></div>
+  <div class="max-w-4xl mx-auto px-5 text-center relative z-10 reveal">
+    <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">Ready to put the barrier to work?</h2>
+    <p class="text-paper/80 font-300 mt-5 max-w-2xl mx-auto">Scope a treatment for your facility, or shop products for your own program and family.</p>
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="contact.html" class="font-display uppercase tracking-widest text-sm bg-gold text-ink px-7 py-4 hover:bg-goldlt transition">Request a Treatment / Quote</a>
-      <a href="products.html" class="font-display uppercase tracking-widest text-sm border border-paper/40 text-paper px-7 py-4 hover:border-gold hover:text-gold transition">Shop Products</a>
+      <a href="contact.html" class="font-display uppercase tracking-widest text-sm bg-blue text-ink px-8 py-4 hover:bg-bluelt transition text-center shadow-[0_18px_40px_-15px_rgba(42,157,244,.7)]">Request a Treatment / Quote</a>
+      <a href="products.html" class="font-display uppercase tracking-widest text-sm border border-paper/40 text-paper px-8 py-4 hover:border-blue hover:text-blue transition text-center">Shop Products</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ============ FOOTER ============ -->
 <footer class="bg-ink text-paper border-t border-white/10">
-  <div class="max-w-7xl mx-auto px-5 py-12 flex flex-col md:flex-row justify-between gap-6 items-center">
-    <div class="flex items-center gap-3">
-      <span class="inline-block h-7 w-7 border-2 border-gold relative"><span class="absolute inset-[5px] bg-gold"></span></span>
-      <span class="font-display font-700 text-lg tracking-wide">SHIELD<span class="text-gold">3</span></span>
-      <span class="font-display uppercase tracking-widest text-xs text-gold ml-3">Three Layers. Total Protection.</span>
+  <div class="max-w-7xl mx-auto px-5 py-16">
+    <div class="flex flex-col items-center text-center mb-12">
+      <div class="shot bare" style="width:300px;max-width:80%">
+        <img src="Website%20Visuals/logo.png.png" alt="Shield3 Athletics — Backed by Science">
+      </div>
     </div>
-    <p class="text-xs text-ash text-center md:text-right max-w-xl font-300">Shield3 Athletics is pursuing EPA N-List registration; products are not represented as EPA registered. Shield3 complements &mdash; does not replace &mdash; routine cleaning. &copy; 2026 Shield3 Athletics.</p>
+    <div class="grid md:grid-cols-3 gap-10 border-t border-white/10 pt-10">
+      <div>
+        <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Explore</h4>
+        <ul class="space-y-2 text-sm text-paper/75 font-300">
+          <li><a href="how-it-works.html" class="hover:text-blue">How It Works</a></li>
+          <li><a href="products.html" class="hover:text-blue">Products</a></li>
+          <li><a href="index.html#solutions" class="hover:text-blue">Solutions</a></li>
+          <li><a href="proof.html" class="hover:text-blue">Proof</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Company</h4>
+        <ul class="space-y-2 text-sm text-paper/75 font-300">
+          <li><a href="index.html#pilots" class="hover:text-blue">Pilot Programs</a></li>
+          <li><a href="index.html#about" class="hover:text-blue">About</a></li>
+          <li><a href="contact.html" class="hover:text-blue">Contact</a></li>
+          <li><a href="proof.html" class="hover:text-blue">Proof &amp; Testing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Get started</h4>
+        <a href="contact.html" class="block text-center font-display uppercase tracking-widest text-xs bg-blue text-ink px-4 py-3 hover:bg-bluelt transition mb-3">Request a Quote</a>
+        <a href="contact.html" class="block text-center font-display uppercase tracking-widest text-xs border border-paper/30 text-paper px-4 py-3 hover:border-blue hover:text-blue transition">Learn About Pilots</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col md:flex-row gap-4 justify-between items-center text-xs text-ash">
+      <p>© 2026 Shield3 Athletics. All rights reserved. <span class="hidden md:inline">·</span> <a href="#" class="hover:text-paper">Privacy</a> · <a href="#" class="hover:text-paper">Terms</a></p>
+      <p class="text-center md:text-right max-w-xl font-300">Pursuing EPA N-List registration; products are not represented as EPA registered. Complements — does not replace — routine cleaning.</p>
+    </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
