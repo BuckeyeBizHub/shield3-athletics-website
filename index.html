@@ -61,6 +61,7 @@ tailwind.config = {
   .shot img{display:block;width:100%;height:auto}
   .shot.bare{background:transparent;border:none;box-shadow:none;border-radius:0}
 
+  [id]{scroll-margin-top:88px} /* keep anchor jumps clear of the sticky header */
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
   .slant-t{clip-path:polygon(0 3.5vw,100% 0,100% 100%,0 100%)}
@@ -313,7 +314,7 @@ tailwind.config = {
 </section>
 
 <!-- ============ PRICING ============ -->
-<section id="pricing" class="bg-paper pb-20 md:pb-24">
+<section id="pricing" class="bg-paper py-20 md:py-24 border-t border-ink/5">
   <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-10 items-center reveal">
     <div>
       <p class="font-display kicker uppercase text-blue text-xs mb-4">Pricing</p>
