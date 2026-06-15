@@ -3,177 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products — Shield3 Athletics</title>
-<meta name="description" content="The Shield3 product line: System 3 SDP surface treatment, Storage Defense Sachets, the Athlete Protection Kit, holders and accessories, and Laundry Defense Sheets (in development).">
+<title>Products — Shield3 Athletics | The Three-Layer Product Line</title>
+<meta name="description" content="The Shield3 product line across surface, storage air, and gear: Surface Treatment, Storage Defense Sachets, the Athlete Protection Kit, holders and accessories, and Laundry Defense Sheets (in development). Every order is a custom quote.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = { theme: { extend: {
-  colors: { ink:'#0e0e0e', coal:'#161616', slate:'#202020', gold:'#c9a227', goldlt:'#e3c25a', paper:'#f5f3ec', ash:'#9c968b' },
-  fontFamily: { display:['Oswald','sans-serif'], body:['"IBM Plex Sans"','sans-serif'] },
-  letterSpacing: { ultra:'0.28em' }
-}}}
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      ink:'#0a0d12', coal:'#11161f', slate:'#1a2230',
+      blue:'#2a9df4', bluelt:'#5bb8ff', bluedp:'#1473cc',
+      silver:'#cfd6df', paper:'#eef2f7', ash:'#8a93a3'
+    },
+    fontFamily: { display:['Oswald','sans-serif'], body:['"IBM Plex Sans"','sans-serif'] },
+    letterSpacing: { ultra:'0.28em' }
+  }}
+}
 </script>
 <style>
   html{scroll-behavior:smooth} body{font-family:'IBM Plex Sans',sans-serif}
   .font-display{font-family:'Oswald',sans-serif} .kicker{letter-spacing:.28em}
-  .tracking-ultra{letter-spacing:.28em}
-  .font-300{font-weight:300}.font-400{font-weight:400}.font-500{font-weight:500}.font-600{font-weight:600}.font-700{font-weight:700}
-  .carbon{background-color:#0e0e0e;background-image:linear-gradient(135deg,rgba(255,255,255,.025) 25%,transparent 25%),linear-gradient(225deg,rgba(255,255,255,.025) 25%,transparent 25%),linear-gradient(45deg,rgba(0,0,0,.25) 25%,transparent 25%),linear-gradient(315deg,rgba(0,0,0,.25) 25%,transparent 25%);background-position:8px 0,8px 0,0 0,0 0;background-size:16px 16px}
-  .gold-rule{height:3px;width:64px;background:#c9a227}
-  .src{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:10px}
+  .chip{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+  .blue-rule{height:3px;width:64px;background:linear-gradient(90deg,#2a9df4,#5bb8ff)}
+
+  .chrome{background:linear-gradient(180deg,#ffffff,#cfd6df 45%,#8b95a3);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .electric{background:linear-gradient(92deg,#5bb8ff,#2a9df4 55%,#1473cc);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .deep{background:
+      radial-gradient(900px 520px at 85% -10%, rgba(42,157,244,.20), transparent 60%),
+      radial-gradient(700px 600px at 0% 110%, rgba(42,157,244,.08), transparent 55%),
+      linear-gradient(180deg,#0c111a,#070a0f);}
+  .deep-soft{background:
+      radial-gradient(700px 420px at 15% 0%, rgba(42,157,244,.12), transparent 60%),
+      linear-gradient(180deg,#11161f,#0a0e14);}
+  .tex{position:absolute;inset:0;pointer-events:none}
+  .grain{opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  .grid-lines{opacity:.55;background-image:linear-gradient(rgba(120,180,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,180,255,.05) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent);mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent)}
+
+  .gedge{position:relative;background:#11161f;border-radius:3px;box-shadow:0 24px 50px -28px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.04)}
+  .gedge::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+    background:linear-gradient(155deg,rgba(42,157,244,.6),rgba(255,255,255,.12) 38%,transparent 70%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+
+  .ecard{background:#fff;border:1px solid rgba(10,13,18,.08);border-radius:5px;box-shadow:0 24px 50px -34px rgba(10,13,18,.5);overflow:hidden}
+  .pimg{display:block;width:100%;height:auto;background:#0e1420}
+
+  .shot{display:block;width:100%;border-radius:4px;overflow:hidden;background:#0e1420;border:1px solid rgba(120,180,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+  .shot img{display:block;width:100%;height:auto}
+  .shot.bare{background:transparent;border:none;box-shadow:none;border-radius:0}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .slant-t{clip-path:polygon(0 3.5vw,100% 0,100% 100%,0 100%)}
+  .orb{animation:pulse 6s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
+
 <body class="bg-paper text-ink antialiased">
 
-<!-- UTILITY BAR -->
-<div class="carbon text-paper text-[11px] tracking-wide border-b border-white/10">
+<!-- ============ UTILITY BAR ============ -->
+<div class="bg-ink text-paper text-[11px] tracking-wide border-b border-white/10">
   <div class="max-w-7xl mx-auto px-5 py-2 flex items-center justify-between">
-    <span class="font-display kicker text-gold uppercase">Three Layers. Total Protection.</span>
+    <span class="font-display kicker uppercase"><span class="text-silver">Backed by Science.</span> <span class="text-blue">Rigorous testing. Real results.</span></span>
     <nav class="hidden sm:flex items-center gap-5 text-ash uppercase font-display tracking-widest">
-      <a href="#" class="hover:text-paper transition">Search</a><a href="#" class="hover:text-paper transition">Account</a><a href="#" class="hover:text-paper transition">Cart (0)</a>
+      <a href="#" class="hover:text-paper transition">Search</a>
+      <a href="#" class="hover:text-paper transition">Account</a>
+      <a href="#" class="hover:text-paper transition">Cart (0)</a>
     </nav>
   </div>
 </div>
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-ink/95 backdrop-blur border-b border-white/10 text-paper">
-  <div class="max-w-7xl mx-auto px-5"><div class="flex items-center justify-between h-[68px]">
-    <a href="index.html" class="flex items-center gap-3">
-      <span class="inline-block h-8 w-8 border-2 border-gold relative"><span class="absolute inset-[6px] bg-gold"></span></span>
-      <span class="font-display font-700 text-xl tracking-wide leading-none">SHIELD<span class="text-gold">3</span><span class="block text-[10px] tracking-ultra text-ash font-400 mt-0.5">ATHLETICS</span></span>
-    </a>
-    <nav class="hidden lg:flex items-center gap-7 font-display uppercase text-sm tracking-widest">
-      <a href="how-it-works.html" class="hover:text-gold transition">How It Works</a>
-      <a href="products.html" class="text-gold">Products</a>
-      <a href="index.html#solutions" class="hover:text-gold transition">Solutions</a>
-      <a href="proof.html" class="hover:text-gold transition">Proof</a>
-      <a href="index.html#pricing" class="hover:text-gold transition">Pricing</a>
-      <a href="index.html#partners" class="hover:text-gold transition">Partners</a>
-      <a href="index.html#about" class="hover:text-gold transition">About</a>
-      <a href="contact.html" class="hover:text-gold transition">Contact</a>
-    </nav>
-    <div class="hidden lg:flex items-center gap-3">
-      <a href="contact.html" class="border border-gold text-gold px-4 py-2 text-xs font-display uppercase tracking-widest hover:bg-gold hover:text-ink transition">Request a Quote</a>
-      <a href="products.html" class="bg-gold text-ink px-4 py-2 text-xs font-display uppercase tracking-widest hover:bg-goldlt transition">Shop Products</a>
+<!-- ============ HEADER / NAV ============ -->
+<header class="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b border-white/10 text-paper">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex items-center justify-between h-[68px]">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <svg width="34" height="38" viewBox="0 0 34 38" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="chr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef2f7"/><stop offset=".5" stop-color="#aab4c2"/><stop offset="1" stop-color="#6f7a89"/></linearGradient></defs>
+          <path d="M17 2 L31 8 V19 C31 28 25 33 17 36 C9 33 3 28 3 19 V8 Z" fill="url(#chr)" stroke="#2a9df4" stroke-width="1.5"/>
+          <text x="17" y="23" text-anchor="middle" font-family="Oswald" font-weight="700" font-size="13" fill="#0a0d12">S3</text>
+        </svg>
+        <span class="font-display font-700 text-xl tracking-wide leading-none">
+          <span class="chrome">SHIELD</span><span class="electric">3</span><span class="block text-[10px] tracking-ultra text-ash font-400 mt-0.5">ATHLETICS</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 font-display uppercase text-sm tracking-widest">
+        <a href="how-it-works.html" class="hover:text-blue transition">How It Works</a>
+        <a href="products.html" class="text-blue transition">Products</a>
+        <a href="index.html#solutions" class="hover:text-blue transition">Solutions</a>
+        <a href="proof.html" class="hover:text-blue transition">Proof</a>
+        <a href="index.html#pricing" class="hover:text-blue transition">Pricing</a>
+        <a href="index.html#pilots" class="hover:text-blue transition">Pilots</a>
+        <a href="index.html#about" class="hover:text-blue transition">About</a>
+        <a href="contact.html" class="hover:text-blue transition">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="contact.html" class="font-display uppercase text-xs tracking-widest border border-blue text-blue px-4 py-2.5 hover:bg-blue hover:text-ink transition">Request a Quote</a>
+        <a href="products.html" class="font-display uppercase text-xs tracking-widest bg-blue text-ink px-4 py-2.5 hover:bg-bluelt transition">Shop Products</a>
+      </div>
+
+      <button id="menuBtn" class="lg:hidden text-paper p-2" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
-    <button id="menuBtn" class="lg:hidden text-paper" aria-label="Menu">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-  </div></div>
-  <div id="mobileMenu" class="hidden lg:hidden bg-ink border-t border-white/10 text-paper">
-    <nav class="flex flex-col px-5 py-2 font-display uppercase text-sm tracking-widest">
-      <a href="how-it-works.html" class="py-3 border-b border-white/5 hover:text-gold">How It Works</a>
-      <a href="products.html" class="py-3 border-b border-white/5 text-gold">Products</a>
-      <a href="index.html#solutions" class="py-3 border-b border-white/5 hover:text-gold">Solutions</a>
-      <a href="proof.html" class="py-3 border-b border-white/5 hover:text-gold">Proof</a>
-      <a href="index.html#pricing" class="py-3 border-b border-white/5 hover:text-gold">Pricing</a>
-      <a href="index.html#partners" class="py-3 border-b border-white/5 hover:text-gold">Partners</a>
-      <a href="index.html#about" class="py-3 border-b border-white/5 hover:text-gold">About</a>
-      <a href="contact.html" class="py-3 border-b border-white/5 hover:text-gold">Contact</a>
-      <div class="flex gap-3 pt-4 pb-2">
-        <a href="contact.html" class="flex-1 text-center border border-gold text-gold px-4 py-3 text-xs">Request a Quote</a>
-        <a href="products.html" class="flex-1 text-center bg-gold text-ink px-4 py-3 text-xs">Shop Products</a>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-ink">
+    <nav class="max-w-7xl mx-auto px-5 py-4 flex flex-col font-display uppercase tracking-widest text-sm">
+      <a href="how-it-works.html" class="py-3 border-b border-white/5 hover:text-blue">How It Works</a>
+      <a href="products.html" class="py-3 border-b border-white/5 text-blue">Products</a>
+      <a href="index.html#solutions" class="py-3 border-b border-white/5 hover:text-blue">Solutions</a>
+      <a href="proof.html" class="py-3 border-b border-white/5 hover:text-blue">Proof</a>
+      <a href="index.html#pricing" class="py-3 border-b border-white/5 hover:text-blue">Pricing</a>
+      <a href="index.html#pilots" class="py-3 border-b border-white/5 hover:text-blue">Pilots</a>
+      <a href="index.html#about" class="py-3 border-b border-white/5 hover:text-blue">About</a>
+      <a href="contact.html" class="py-3 border-b border-white/5 hover:text-blue">Contact</a>
+      <div class="flex gap-3 pt-4">
+        <a href="contact.html" class="flex-1 text-center border border-blue text-blue px-4 py-3 text-xs">Request a Quote</a>
+        <a href="products.html" class="flex-1 text-center bg-blue text-ink px-4 py-3 text-xs">Shop Products</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- PAGE HERO -->
-<section class="carbon text-paper py-14 md:py-16">
-  <div class="max-w-7xl mx-auto px-5">
-    <p class="font-display kicker uppercase text-gold text-xs mb-4">Products</p>
-    <h1 class="font-display font-700 uppercase text-4xl md:text-5xl leading-[0.95] max-w-3xl">The three-layer product line</h1>
-    <p class="text-paper/75 font-300 mt-5 max-w-2xl text-lg">One chemistry platform across surface, storage air, and gear. Online ordering is being set up — for orders today, or a facility quote, reach out and we'll take care of it.</p>
+<!-- ============ HERO (prod1) ============ -->
+<section class="deep text-paper relative overflow-hidden">
+  <div class="tex grain"></div>
+  <div class="tex grid-lines"></div>
+  <div class="absolute -right-32 -top-24 h-[460px] w-[460px] rounded-full orb" style="background:radial-gradient(circle, rgba(42,157,244,.28), transparent 65%)"></div>
+  <div class="max-w-7xl mx-auto px-5 py-12 md:py-16 relative z-10">
+    <h1 class="sr-only">Shield3 Athletics products — the three-layer product line across surface, storage air, and gear.</h1>
+    <p class="font-display kicker uppercase text-blue text-xs mb-5 text-center">Products</p>
+    <div class="shot">
+      <img src="Website%20Visuals/prod1.png" alt="The Shield3 three-layer product line: surface treatment, storage-air sachets, and gear, across Surface, Storage Air, and Gear.">
+    </div>
+    <p class="text-center text-lg md:text-xl text-paper/80 font-300 max-w-2xl mx-auto mt-8">One platform across surface, storage air, and gear. Online checkout is being finalized — for now, every order is a custom quote.</p>
+    <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="contact.html" class="font-display uppercase tracking-widest text-sm bg-blue text-ink px-7 py-4 hover:bg-bluelt transition text-center shadow-[0_18px_40px_-15px_rgba(42,157,244,.7)]">Request a Quote</a>
+      <a href="mailto:david@shield3athletics.com" class="font-display uppercase tracking-widest text-sm border border-paper/40 text-paper px-7 py-4 hover:border-blue hover:text-blue transition text-center">Email to Order</a>
+    </div>
   </div>
 </section>
 
-<!-- PRODUCT GRID -->
-<section class="bg-paper py-16">
+<!-- ============ PRODUCT GRID ============ -->
+<section class="bg-paper py-16 md:py-20">
   <div class="max-w-7xl mx-auto px-5">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="max-w-3xl reveal">
+      <p class="font-display kicker uppercase text-blue text-xs mb-4">The line</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight">The three-layer product line</h2>
+      <div class="blue-rule mt-6"></div>
+      <p class="text-ink/75 font-300 mt-6 leading-relaxed">Ordering is handled as a custom quote while online checkout is being set up — single bottle, team bundle, or full facility. Tell us what you need and we'll take care of it.</p>
+    </div>
 
-      <!-- System 3 SDP -->
-      <div class="border border-ink/10 p-7 flex flex-col">
-        <p class="src text-gold">Layer 1 · Surface</p>
-        <h3 class="font-display font-600 uppercase text-2xl mt-2">System 3 SDP</h3>
-        <p class="text-ink/70 font-300 mt-3 text-[15px] leading-relaxed flex-1">The Shield3 SurfaceBond surface treatment. Bonds onto surfaces to form a persistent antimicrobial barrier that stays active between routine cleanings. Available in 1-gallon, 32 oz, and 16 oz.</p>
-        <p class="text-xs text-ash mt-4 font-300">Safety Data Sheet available on request.</p>
-        <button class="addBtn mt-4 font-display uppercase tracking-widest text-xs border border-gold text-gold px-5 py-3 hover:bg-gold hover:text-ink transition">Order — coming soon</button>
+    <div class="grid md:grid-cols-2 gap-7 mt-10">
+
+      <!-- Surface Treatment -->
+      <div class="ecard reveal flex flex-col">
+        <img class="pimg" src="Website%20Visuals/prod2.png" alt="Shield3 Surface Treatment, Layer 1, in 1-gallon, 32 oz, and 16 oz sizes.">
+        <div class="p-6 md:p-7 flex flex-col flex-1">
+          <span class="chip text-bluedp">Layer 1 · Surface</span>
+          <h3 class="font-display font-600 uppercase text-xl md:text-2xl mt-1">Surface Treatment</h3>
+          <p class="text-ink/70 font-300 text-[15px] mt-3 flex-1">Bonds onto high-touch surfaces to form a persistent protective barrier that stays active between routine cleanings. Available in 1-gallon, 32 oz, and 16 oz.</p>
+          <p class="text-xs text-ash mt-3">Safety Data Sheet available on request.</p>
+          <a href="contact.html" class="mt-5 inline-block font-display uppercase tracking-widest text-xs bg-blue text-ink px-6 py-3.5 hover:bg-bluelt transition self-start">Request a Quote →</a>
+        </div>
       </div>
 
       <!-- Storage Defense Sachets -->
-      <div class="border border-ink/10 p-7 flex flex-col">
-        <p class="src text-gold">Layer 2 · Storage Air</p>
-        <h3 class="font-display font-600 uppercase text-2xl mt-2">Storage Defense Sachets</h3>
-        <p class="text-ink/70 font-300 mt-3 text-[15px] leading-relaxed flex-1">Chlorine dioxide (ClO&#8322;) sachets for continuous atmospheric treatment in enclosed storage — gear bags, lockers, and equipment rooms. Available in Bag, Room, and Space sizes.</p>
-        <p class="text-xs text-ash mt-4 font-300">Private-labeled via Beckart Environmental.</p>
-        <button class="addBtn mt-4 font-display uppercase tracking-widest text-xs border border-gold text-gold px-5 py-3 hover:bg-gold hover:text-ink transition">Order — coming soon</button>
+      <div class="ecard reveal flex flex-col">
+        <img class="pimg" src="Website%20Visuals/prod3.png" alt="Shield3 Storage Defense Sachets, Layer 2, in Bag, Room, and Space sizes, treating the air inside enclosed storage.">
+        <div class="p-6 md:p-7 flex flex-col flex-1">
+          <span class="chip text-bluedp">Layer 2 · Storage Air</span>
+          <h3 class="font-display font-600 uppercase text-xl md:text-2xl mt-1">Storage Defense Sachets</h3>
+          <p class="text-ink/70 font-300 text-[15px] mt-3 flex-1">Slow-release sachets that treat the air inside enclosed storage — gear bags, lockers, and equipment rooms. Available in Bag, Room, and Space sizes.</p>
+          <a href="contact.html" class="mt-5 inline-block font-display uppercase tracking-widest text-xs bg-blue text-ink px-6 py-3.5 hover:bg-bluelt transition self-start">Request a Quote →</a>
+        </div>
       </div>
 
       <!-- Athlete Protection Kit -->
-      <div class="border border-ink/10 p-7 flex flex-col">
-        <p class="src text-gold">Bundle</p>
-        <h3 class="font-display font-600 uppercase text-2xl mt-2">Athlete Protection Kit</h3>
-        <p class="text-ink/70 font-300 mt-3 text-[15px] leading-relaxed flex-1">A starter bundle for individual athletes and teams: a 16 oz surface spray plus three Bag-size Storage Defense Sachets. Built for personal gear between practices.</p>
-        <p class="text-xs text-ash mt-4 font-300">Great for team orders.</p>
-        <button class="addBtn mt-4 font-display uppercase tracking-widest text-xs border border-gold text-gold px-5 py-3 hover:bg-gold hover:text-ink transition">Order — coming soon</button>
+      <div class="ecard reveal flex flex-col">
+        <img class="pimg" src="Website%20Visuals/prod4.png" alt="Shield3 Athlete Protection Kit — a 16 oz surface spray plus three sachets.">
+        <div class="p-6 md:p-7 flex flex-col flex-1">
+          <span class="chip text-bluedp">Bundle</span>
+          <h3 class="font-display font-600 uppercase text-xl md:text-2xl mt-1">Athlete Protection Kit</h3>
+          <p class="text-ink/70 font-300 text-[15px] mt-3 flex-1">A starter bundle for athletes and teams: a 16 oz surface spray plus three Bag-size Storage Defense Sachets. Built for personal gear between practices — and great for team orders.</p>
+          <a href="contact.html" class="mt-5 inline-block font-display uppercase tracking-widest text-xs bg-blue text-ink px-6 py-3.5 hover:bg-bluelt transition self-start">Request a Quote →</a>
+        </div>
       </div>
 
       <!-- Holders & Accessories -->
-      <div class="border border-ink/10 p-7 flex flex-col">
-        <p class="src text-gold">Accessories</p>
-        <h3 class="font-display font-600 uppercase text-2xl mt-2">Holders &amp; Accessories</h3>
-        <p class="text-ink/70 font-300 mt-3 text-[15px] leading-relaxed flex-1">Branded sachet holders for wall, ceiling, locker, and bag-clip mounting — so storage-air treatment stays exactly where it's needed.</p>
-        <p class="text-xs text-ash mt-4 font-300">Cross-sells with Storage Defense Sachets.</p>
-        <button class="addBtn mt-4 font-display uppercase tracking-widest text-xs border border-gold text-gold px-5 py-3 hover:bg-gold hover:text-ink transition">Order — coming soon</button>
+      <div class="ecard reveal flex flex-col">
+        <img class="pimg" src="Website%20Visuals/prod5.png" alt="Shield3 Holders and Accessories — wall, locker, and bag-clip mounts for sachets.">
+        <div class="p-6 md:p-7 flex flex-col flex-1">
+          <span class="chip text-bluedp">Accessories</span>
+          <h3 class="font-display font-600 uppercase text-xl md:text-2xl mt-1">Holders &amp; Accessories</h3>
+          <p class="text-ink/70 font-300 text-[15px] mt-3 flex-1">Branded sachet holders for wall, locker, and bag-clip mounting, so storage-air treatment stays exactly where it's needed. Pairs with Storage Defense Sachets.</p>
+          <a href="contact.html" class="mt-5 inline-block font-display uppercase tracking-widest text-xs bg-blue text-ink px-6 py-3.5 hover:bg-bluelt transition self-start">Request a Quote →</a>
+        </div>
       </div>
 
       <!-- Laundry Defense Sheets (in development) -->
-      <div class="border border-dashed border-ink/20 p-7 flex flex-col bg-ink/[0.02]">
-        <p class="src text-gold">Layer 3 · Gear</p>
-        <h3 class="font-display font-600 uppercase text-2xl mt-2">Laundry Defense Sheets</h3>
-        <p class="text-ink/70 font-300 mt-3 text-[15px] leading-relaxed flex-1">SurfaceBond protection delivered through a dissolvable laundry sheet, extending the barrier into the wash cycle. <span class="font-500 text-ink">In active development — not yet a shipping product.</span></p>
-        <button id="notifyBtn" class="mt-4 font-display uppercase tracking-widest text-xs bg-ink text-paper px-5 py-3 hover:bg-slate transition">Notify me when available</button>
-        <p id="notifyNote" class="text-xs text-ash mt-3 font-300">Want to be first to know? Email <a href="mailto:david@shield3athletics.com" class="text-gold hover:text-goldlt underline">david@shield3athletics.com</a> and we'll add you to the list.</p>
-      </div>
-
-      <!-- Facility CTA tile -->
-      <div class="carbon text-paper p-7 flex flex-col justify-between">
-        <div>
-          <p class="src text-gold">For facilities</p>
-          <h3 class="font-display font-600 uppercase text-2xl mt-2">Managed treatments</h3>
-          <p class="text-paper/75 font-300 mt-3 text-[15px] leading-relaxed">For locker rooms, mats, weight rooms, and full facilities, we scope a treatment to your space and provide a quote.</p>
+      <div class="ecard reveal flex flex-col md:col-span-2">
+        <div class="md:flex">
+          <img class="pimg md:w-1/2" src="Website%20Visuals/prod6.png" alt="Shield3 Laundry Defense Sheets, Layer 3, in development — a dissolvable laundry sheet for the wash cycle.">
+          <div class="p-6 md:p-8 flex flex-col flex-1">
+            <div class="flex items-center gap-3">
+              <span class="chip text-paper bg-bluedp/90 px-2 py-1 rounded">In development</span>
+              <span class="chip text-ash">Layer 3 · Gear</span>
+            </div>
+            <h3 class="font-display font-600 uppercase text-xl md:text-2xl mt-3">Laundry Defense Sheets</h3>
+            <p class="text-ink/70 font-300 text-[15px] mt-3 flex-1">Protection carried into the wash through a dissolvable laundry sheet, extending the barrier into the wash cycle. In active development — not yet a shipping product.</p>
+            <p class="text-xs text-ash mt-3">Want to be first to know when it's available?</p>
+            <a href="mailto:david@shield3athletics.com?subject=Laundry%20Defense%20Sheets%20-%20notify%20me" class="mt-4 inline-block font-display uppercase tracking-widest text-xs border border-ink/30 text-ink px-6 py-3.5 hover:border-blue hover:text-blue transition self-start">Notify Me →</a>
+          </div>
         </div>
-        <a href="contact.html" class="mt-5 font-display uppercase tracking-widest text-xs bg-gold text-ink px-5 py-3 hover:bg-goldlt transition text-center">Request a Quote</a>
       </div>
 
     </div>
-    <p class="text-center text-ash font-300 text-sm mt-10">Prices and online checkout are being finalized. To place an order now, email <a href="mailto:david@shield3athletics.com" class="text-gold hover:text-goldlt underline">david@shield3athletics.com</a> or call <a href="tel:+16145613358" class="text-gold hover:text-goldlt underline">614-561-3358</a>.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-ink text-paper border-t border-white/10">
-  <div class="max-w-7xl mx-auto px-5 py-12 flex flex-col md:flex-row justify-between gap-6 items-center">
-    <div class="flex items-center gap-3">
-      <span class="inline-block h-7 w-7 border-2 border-gold relative"><span class="absolute inset-[5px] bg-gold"></span></span>
-      <span class="font-display font-700 text-lg tracking-wide">SHIELD<span class="text-gold">3</span></span>
-      <span class="font-display uppercase tracking-widest text-xs text-gold ml-3">Three Layers. Total Protection.</span>
+<!-- ============ FOR FACILITIES ============ -->
+<section class="deep text-paper py-20 md:py-24 relative overflow-hidden slant-t -mt-2">
+  <div class="tex grain"></div><div class="tex grid-lines"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <p class="font-display kicker uppercase text-blue text-xs mb-4">For facilities</p>
+      <h2 class="font-display font-600 uppercase text-3xl md:text-4xl leading-tight"><span class="chrome">Managed</span> <span class="electric">treatments</span></h2>
+      <div class="blue-rule mt-6"></div>
+      <p class="text-paper/80 font-300 mt-6 leading-relaxed text-lg">For locker rooms, mats, weight rooms, and full facilities, we scope a treatment to your space, apply the system around your routine, and document conditions with ATP measurement — then provide a quote.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="contact.html" class="font-display uppercase tracking-widest text-sm bg-blue text-ink px-7 py-4 hover:bg-bluelt transition text-center shadow-[0_18px_40px_-15px_rgba(42,157,244,.6)]">Request a Quote →</a>
+        <a href="how-it-works.html" class="font-display uppercase tracking-widest text-sm border border-paper/40 text-paper px-7 py-4 hover:border-blue hover:text-blue transition text-center">How It Works</a>
+      </div>
     </div>
-    <p class="text-xs text-ash text-center md:text-right max-w-xl font-300">Shield3 Athletics is pursuing EPA N-List registration; products are not represented as EPA registered. Shield3 complements &mdash; does not replace &mdash; routine cleaning. &copy; 2026 Shield3 Athletics.</p>
+    <div class="reveal">
+      <div class="gedge p-7 md:p-8">
+        <h3 class="font-display uppercase tracking-widest text-blue text-sm">How ordering works right now</h3>
+        <ul class="mt-5 space-y-4 text-paper/80 font-300 text-[15px]">
+          <li class="flex gap-3"><span class="text-blue font-display">01</span> Tell us what you need — a single product, a team bundle, or a facility treatment.</li>
+          <li class="flex gap-3"><span class="text-blue font-display">02</span> We confirm sizing and put together a quote scoped to you.</li>
+          <li class="flex gap-3"><span class="text-blue font-display">03</span> You approve, we fulfill. Online checkout is coming in a later phase.</li>
+        </ul>
+        <p class="text-ash text-sm mt-6 font-300">Order now: <a href="mailto:david@shield3athletics.com" class="text-blue hover:text-bluelt">david@shield3athletics.com</a> · <a href="tel:+16145613358" class="text-blue hover:text-bluelt">614-561-3358</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-paper border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 py-16">
+    <div class="flex flex-col items-center text-center mb-12">
+      <div class="shot bare" style="width:300px;max-width:80%">
+        <img src="Website%20Visuals/logo.png.png" alt="Shield3 Athletics — Backed by Science">
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 border-t border-white/10 pt-10">
+      <div>
+        <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Explore</h4>
+        <ul class="space-y-2 text-sm text-paper/75 font-300">
+          <li><a href="how-it-works.html" class="hover:text-blue">How It Works</a></li>
+          <li><a href="products.html" class="hover:text-blue">Products</a></li>
+          <li><a href="index.html#solutions" class="hover:text-blue">Solutions</a></li>
+          <li><a href="proof.html" class="hover:text-blue">Proof</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Company</h4>
+        <ul class="space-y-2 text-sm text-paper/75 font-300">
+          <li><a href="index.html#pilots" class="hover:text-blue">Pilot Programs</a></li>
+          <li><a href="index.html#about" class="hover:text-blue">About</a></li>
+          <li><a href="contact.html" class="hover:text-blue">Contact</a></li>
+          <li><a href="proof.html" class="hover:text-blue">Proof &amp; Testing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display uppercase tracking-widest text-xs text-ash mb-4">Get started</h4>
+        <a href="contact.html" class="block text-center font-display uppercase tracking-widest text-xs bg-blue text-ink px-4 py-3 hover:bg-bluelt transition mb-3">Request a Quote</a>
+        <a href="contact.html" class="block text-center font-display uppercase tracking-widest text-xs border border-paper/30 text-paper px-4 py-3 hover:border-blue hover:text-blue transition">Learn About Pilots</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col md:flex-row gap-4 justify-between items-center text-xs text-ash">
+      <p>© 2026 Shield3 Athletics. All rights reserved. <span class="hidden md:inline">·</span> <a href="#" class="hover:text-paper">Privacy</a> · <a href="#" class="hover:text-paper">Terms</a></p>
+      <p class="text-center md:text-right max-w-xl font-300">Pursuing EPA N-List registration; products are not represented as EPA registered. Complements — does not replace — routine cleaning.</p>
+    </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
-  document.querySelectorAll('.addBtn').forEach(function(b){
-    b.addEventListener('click',function(){
-      b.textContent='Email to order';
-    });
-  });
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
